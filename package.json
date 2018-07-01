@@ -8,8 +8,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --aot -prod",
-    "start": "node server.js",
-    "deploy": "git push https://github.com/weskhaled/mycvx.git master && git push heroku master"
+    "start": "node server.js"
   },
   "private": true,
   "dependencies": {
