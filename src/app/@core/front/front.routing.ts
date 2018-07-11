@@ -8,7 +8,7 @@ const routes: Routes = [{
   children: [
     {
       path: 'index',
-      loadChildren: './index/index.module#IndexModule'
+      loadChildren: './pages/index/index.module#IndexModule'
     },
     { path: '', redirectTo: 'index', pathMatch: 'full' },
     // { path: '**', redirectTo: 'index' },

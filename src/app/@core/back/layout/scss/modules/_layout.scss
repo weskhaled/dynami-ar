@@ -1,0 +1,19 @@
+/*------------------------------------------------------------------
+[1. Layouts]
+*/
+html {
+    height: 100%;
+}
+/* Body Triggers for layout options
+------------------------------------------------------------------
+*/
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: $color-master-lightest;
+    -moz-osx-font-smoothing: grayscale;
+}
+.westest{
+    background-color: aqua;
+}

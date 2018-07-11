@@ -6,6 +6,7 @@ import { FrontRoutingModule } from './front.routing';
 import { Front } from './front.component';
 import { SeoService } from '../../@services/front/seo.services';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PageHeader } from './components/page-header/page-header.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -13,7 +14,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
     FrontRoutingModule
   ],
   providers: [SeoService],
-  declarations: [Front]
+  declarations: [Front, PageHeader]
 })
 export class FrontModule {
 }
