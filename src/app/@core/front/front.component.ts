@@ -4,19 +4,22 @@ import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Routes } from '@angular/router';
 import { SeoService } from '../../@services/front/seo.services';
-declare module 'waypoints';
+// declare module 'waypoints';
+declare var Snap: any;
+declare var mina: any;
 @Component({
   selector: 'front',
   templateUrl: './front.html',
   styleUrls: ['./style.scss']
 })
 export class Front implements OnInit {
-
-  $body:any;
+  $body: any;
+  $content: any;
+  $footer: any;
   pinsidebar: boolean = false;
   sidebarvisible: boolean = false;
   sidebaropen: boolean = false;
-  directionscroll:any;
+  directionscroll: any;
   constructor(private seo: SeoService, private renderer: Renderer2) {
     this.renderer.addClass(document.body, 'navigation-panel');
     this.renderer.addClass(document.body, 'page-scrolling');
@@ -36,35 +39,87 @@ export class Front implements OnInit {
     let self = this;
     // var s = $('section');
     self.$body = $('body');
-    $('indexcomponent section.section').each(function(index) {
-      var directionscroll = 'down';
-      new Waypoint({
-        element: this,
-        handler: function (direction) {
-        directionscroll = direction;
-          self.setSectionScheme($(this.element));
-        },                            
-        offset: function() {
-          if(directionscroll == 'up'){
-            return 0 - this.element.clientHeight;
-          } else {
-            return 0;
+    self.$content = $('#content');
+    self.$footer = $('#footer');
+    setTimeout(() => {
+      $('indexcomponent section.section').each(function (index) {
+        var directionscroll = 'down';
+        new Waypoint({
+          element: this,
+          handler: function (direction) {
+            directionscroll = direction;
+            self.setSectionScheme($(this.element));
+          },
+          offset: function () {
+            if (directionscroll == 'up') {
+              return 0 - this.element.clientHeight;
+            } else {
+              return 0;
+            }
           }
-      }
-      })
-    });
-    // var waypoint = new Waypoint({
-    //   element: document.querySelector('.section'),
-    //   handler: function (direction) {
-    //     console.log('test way '+direction);
-    //   }
-    // })
+        })
+      });
+      self.window();
+      self.footer();
+    }, 0);
   }
   setSectionScheme($section) {
-    if($section.data('scheme') === 'light') {
-        this.$body.removeClass('dark-scheme').addClass('light-scheme');
-    } else if($section.data('scheme') === 'dark') {
-        this.$body.removeClass('light-scheme').addClass('dark-scheme');
+    if ($section.data('scheme') === 'light') {
+      this.$body.removeClass('dark-scheme').addClass('light-scheme');
+    } else if ($section.data('scheme') === 'dark') {
+      this.$body.removeClass('light-scheme').addClass('dark-scheme');
     }
-}
+  }
+  window() {
+
+    var $window = $('.window'),
+      $windowToggle = $('.window-toggle');
+
+    if ($window.length) {
+      var s = Snap('.window-background');
+      var el = s.path('M 0 220 C 620 0, 1300 0, 1920 220 L 1920 1080 L 0 1080 Z');
+      el.transform('t0,1080');
+
+      var matrix = new Snap.Matrix();
+      matrix.translate(0, 0);
+
+      $windowToggle.on('click', function () {
+        var $self = $(this),
+          $target = $($self.data('target'));
+
+        if (!$target.hasClass('show')) {
+          $target.addClass('show');
+          $self.addClass('active');
+          $('body').css('overflow', 'hidden');
+          el.stop().animate({ transform: 't0,0' }, 300, mina.linear, function () {
+            el.stop().animate({ 'path': 'M 0 0 C 620 0, 1300 0, 1920 0 L 1920 1080 L 0 1080 Z' }, 1200, mina.elastic);
+            $target.addClass('visible');
+          });
+        } else {
+          $target.removeClass('visible');
+          setTimeout(function () {
+            el.stop()
+              .animate({ 'path': 'M 0 0 C 620 220, 1300 220, 1920 0 L 1920 1080 L 0 1080 Z' }, 300, mina.linear)
+              .animate({ transform: 't0,1080' }, 300, mina.linear, function () {
+                $('body').css('overflow', 'auto');
+                $self.removeClass('active');
+                el.stop().animate({ 'path': 'M 0 0 C 620 0, 1300 0, 1920 0 L 1920 1080 L 0 1080 Z' }, 1200, mina.elastic, function () {
+                  $target.removeClass('show');
+                  el.attr({
+                    path: 'M 0 220 C 620 0, 1300 0, 1920 220 L 1920 1080 L 0 1080 Z'
+                  });
+                });
+              });
+          }, 300);
+        }
+      });
+
+      // By default its black, lets change its attributes
+    }
+
+  }
+  footer() {
+    let self = this;
+    self.$body.css('padding-bottom', self.$footer.height() - 1 + 'px');
+  }
 }
