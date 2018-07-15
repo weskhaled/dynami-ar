@@ -8,11 +8,16 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { IsotopeModule } from 'ngx-isotope';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { SwiperSlider } from '../../components/swiper-slider/swiper-slider.component';
+import { SwiperModule } from 'ngx-swiper-wrapper';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   imports: [
     IsotopeModule,
-    PerfectScrollbarModule,    
+    PerfectScrollbarModule,   
+    SwiperModule, 
     NgCircleProgressModule.forRoot({
       // set defaults here
       radius: 100,
@@ -24,12 +29,15 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
       titleFontSize: "52",
       subtitleFontSize: "15"
     }),
+    AgmCoreModule,
+    ScrollToModule.forRoot(),
     NgxChartsModule,
     MaterialModule,
+    FormsModule,
     CommonModule,
     routing
   ],
-  declarations: [IndexComponent],
+  declarations: [IndexComponent,SwiperSlider],
   providers: []
 })
 export class IndexModule {}

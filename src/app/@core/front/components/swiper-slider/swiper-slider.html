@@ -1,0 +1,44 @@
+<!-- Strat Slider -->
+<div id="fullscreen-slider" class="no-fullscreen swiper-container" [swiper]="configindex" #sliderindex="ngxSwiper" [(index)]="index"
+  (swiperautoplayStart)="autoplayStartswiper()" (init)="firstinit()" (mouseover)="mouseoverswiper($event)" (mouseout)="mouseoutswiper($event)"
+  (slideChange)="slidechange()" (indexChange)="onIndexChange($event)" (slideChangeTransitionEnd)="endtransition()" (slideChangeTransitionStart)="starttransition()">
+  <div class="swiper-progressBar">
+    <div class="swiper-bar" [ngStyle]="{'transition': 'width ' + progresswidthdelay+ 'ms linear','width': progresswidth+'%'}"></div>
+  </div>
+  <nav class="nav-slit">
+    <a class="prev" href="javascript:void(0)" (click)="goprevslide()">
+      <span class="icon-wrap">
+        <i class="icon fa fa-angle-left"></i>
+      </span>
+      <div>
+        <h3 id="title-prev">{{prevslide.data_title}}</h3>
+        <img id="thumb-prev" src="{{prevslide.data_thumb_url}}" alt="Previous thumb">
+      </div>
+    </a>
+    <a class="next" href="javascript:void(0)" (click)="gonextslide()">
+      <span class="icon-wrap">
+        <i class="icon fa fa-angle-right"></i>
+      </span>
+      <div>
+        <h3 id="title-next">{{nextslide.data_title}}</h3>
+        <img id="thumb-next" src="{{nextslide.data_thumb_url}}" alt="Next thumb">
+      </div>
+    </a>
+  </nav>
+  <div class="swiper-pagination"></div>
+  <div class="swiper-wrapper">
+    <article *ngFor="let varticle of articles; let i = index" class="swiper-slide" data-hash="slide1" [attr.data-title]="varticle.data_title"
+      [attr.data-thumb-url]="varticle.data_thumb_url">
+      <header>
+        <div class="pattern pattern-1"></div>
+        <div class="pattern back-35-g"></div>
+        <div class="header-image" [ngStyle]="{'background-image': 'url(' + varticle.background_image + ')'}"></div>
+
+        <div class="container-fluid">
+          <div class="row animated" [attr.data-animate]="varticle.data_animate"  [innerHTML]="varticle.content"></div>
+        </div>
+      </header>
+    </article>
+  </div>
+</div>
+<!-- End Slider -->

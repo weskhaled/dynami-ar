@@ -1,32 +1,40 @@
 import { Component, OnInit, OnDestroy, Inject, ViewChildren, QueryList, ElementRef, Renderer, ViewChild, Renderer2 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MouseEvent } from '@agm/core';
 import { SeoService } from '../../../../@services/front/seo.services';
 import {
   PerfectScrollbarConfigInterface,
   PerfectScrollbarComponent, PerfectScrollbarDirective
 } from 'ngx-perfect-scrollbar';
 import Typed from 'typed.js';
+import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 // import EasyPieChart from 'easy-pie-chart';
 @Component({
   selector: 'IndexComponent',
   templateUrl: './index.html',
 //   template: `
-//   <div class="single-chart">
-//   <div class="chart" data-bar-color="#35A4F0" data-track-color="#EEEEEE" data-percent="100">
-//       <div class="chart-content">
-//           <span class="value">
-//               <span>5</span>/5</span>
-//           <h6 class="title">Polish</h6>
-//       </div>
-//   </div>
-// </div>
+//   <agm-map 
+//   [latitude]="lat"
+//   [longitude]="lng"
+//   [zoom]="zoom"
+//   [disableDefaultUI]="false"
+//   [zoomControl]="false">
+//   <agm-marker 
+//       *ngFor="let m of markers; let i = index"
+//       (markerClick)="clickedMarker(m.label, i)"
+//       [latitude]="m.lat"
+//       [longitude]="m.lng"
+//       [label]="m.label"
+//       [markerDraggable]="m.draggable">
+      
+//     <agm-info-window>
+//       <strong>InfoWindow content</strong>
+//     </agm-info-window>
+//   </agm-marker>
+// </agm-map>
 //   `,
 // template: `
-// <circle-progress
-//   [percent]="35"
-//   subtitle="PhotoShop"
-//   unitsFontSize="21"
-// ></circle-progress>
+// <swiper-slider></swiper-slider>
 // `,
   styleUrls: ['./style.scss']
 })
@@ -35,13 +43,23 @@ export class IndexComponent implements OnInit {
   colorScheme = {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
   };
-  view: any[] = [700, 100];
-  single = [
-    {
-      "name": "Germany",
-      "value": 20
-    }
-  ];
+  // google maps zoom level
+  zoom: number = 8;
+  // initial center position for the map
+  lat: number = 51.673858;
+  lng: number = 7.815982;
+  clickedMarker(label: string, index: number) {
+    console.log(`clicked the marker: ${label || index}`)
+  }
+  markers: marker[] = [
+	  {
+		  lat: 51.673858,
+		  lng: 7.815982,
+		  label: 'WK',
+		  draggable: false
+	  }
+  ]
+  enabledmap:boolean = false;
   deviceObjects = [{ name: 'test 111111111', value: '1' }, { name: 'test 22222222', value: '2' }, { name: 'test 33333333333', value: '3' }];
   constructor(private seo: SeoService, private renderer: Renderer2) {
   }
@@ -207,4 +225,12 @@ export class IndexComponent implements OnInit {
   addone() {
     this.deviceObjects.push({ name: ' test 4444', value: '4' });
   }
+}
+
+// just an interface for type safety.
+interface marker {
+	lat: number;
+	lng: number;
+	label?: string;
+	draggable: boolean;
 }
