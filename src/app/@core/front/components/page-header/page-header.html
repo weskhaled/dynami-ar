@@ -4,12 +4,11 @@
     <div class="navigation-inner">
         <!-- Navigation Primary -->
         <ul class="nav nav-primary-panel">
-            <li class="nav-item"><a href="#start" class="nav-link">Start</a></li>
-            <li class="nav-item"><a href="#resume" class="nav-link">Resume</a></li>
-            <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-            <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
+            <li class="nav-item"><a data-href="#start" href="javascript:void(0)" [ngx-scroll-to]="'#start'" class="nav-link">Start</a></li>
+            <li class="nav-item"><a data-href="#resume" href="javascript:void(0)" [ngx-scroll-to]="'#resume'" class="nav-link">Resume</a></li>
+            <li class="nav-item"><a data-href="#portfolio" href="javascript:void(0)" [ngx-scroll-to]="'#portfolio'" class="nav-link">Portfolio</a></li>
+            <li class="nav-item"><a data-href="#contact" href="javascript:void(0)" [ngx-scroll-to]="'#contact'" class="nav-link">Contact</a></li>
             <li class="nav-item"><a routerLink="/auth/login" class="nav-link">Login</a></li>
-            <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
     </div>
     

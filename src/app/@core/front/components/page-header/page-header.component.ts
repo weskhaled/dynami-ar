@@ -23,6 +23,46 @@ export class PageHeader implements OnInit {
     logoutuser() {
       
     }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      var $header = $( 'page-header' );
+      var $nav = $('#navigation');
+      var $menuItem = $nav.find('a');
+
+      var checkMenuItem = function(id) {
+          $menuItem.each(function(){
+              var link = $(this).attr('data-href');
+              if(id==link) {
+                  $(this).addClass('active');
+              }
+              else $(this).removeClass('active');
+          });
+      }
+      $('indexcomponent section.section').each(function (index) {
+        var directionscroll = 'down';
+        var $element = $( this );
+        new Waypoint({
+          element: this,
+          handler: function (direction) {
+            var $class_up = $element.attr('data-class-up');
+            var $class_dwn = $element.attr('data-class-dwn');
+            if( direction === 'down' && $class_dwn ) {
+              $header.attr('class','');
+              $header.addClass($class_dwn);
+              checkMenuItem('#'+$class_dwn);
+            }
+            else if( direction === 'up' && $class_up ){
+              $header.attr('class','');
+              $header.addClass($class_up);
+              checkMenuItem('#'+$class_up);
+            }
+          },
+          offset: '1'
+        })
+      });
+    }, 0);
+  }
     togglesidebarOpen($event){
       console.log($event);
       this.sidebaropen = !this.sidebaropen;

@@ -40,9 +40,6 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 })
 export class IndexComponent implements OnInit {
   public config: PerfectScrollbarConfigInterface = {};
-  colorScheme = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
-  };
   // google maps zoom level
   zoom: number = 8;
   // initial center position for the map

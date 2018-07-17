@@ -42,33 +42,9 @@ export class Front implements OnInit {
     self.$content = $('#content');
     self.$footer = $('#footer');
     setTimeout(() => {
-      $('indexcomponent section.section').each(function (index) {
-        var directionscroll = 'down';
-        new Waypoint({
-          element: this,
-          handler: function (direction) {
-            directionscroll = direction;
-            self.setSectionScheme($(this.element));
-          },
-          offset: function () {
-            if (directionscroll == 'up') {
-              return 0 - this.element.clientHeight;
-            } else {
-              return 0;
-            }
-          }
-        })
-      });
       self.window();
       self.footer();
     }, 0);
-  }
-  setSectionScheme($section) {
-    if ($section.data('scheme') === 'light') {
-      this.$body.removeClass('dark-scheme').addClass('light-scheme');
-    } else if ($section.data('scheme') === 'dark') {
-      this.$body.removeClass('light-scheme').addClass('dark-scheme');
-    }
   }
   window() {
 

@@ -354,8 +354,15 @@ body.page-scrolling .section-slider {
 
 /* Section Contact */
 .section-contact {
+    .section-header{
+        pointer-events: all;
+    }
+    .section-content{
+        pointer-events: none;
+    }
     .section-contact-content {
         @include transition-primary;
+        pointer-events: all;
     }
     &.map-visible {
         .section-contact-content {

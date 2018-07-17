@@ -43,8 +43,8 @@ export class SwiperSlider implements OnInit {
   progresswidthdelay:number=0;
   articles = [
     {
-      data_thumb_url: '/assets/img/projects/project01.jpg',
-      background_image: '/assets/img/projects/project01.jpg',
+      data_thumb_url: '/assets/img/photos/developer/home-3-thumb.jpg',
+      background_image: '/assets/img/photos/developer/home-3.jpg',
       data_title: '1/3',
       data_animate: 'fadeInUp',
       content: `
@@ -56,10 +56,6 @@ export class SwiperSlider implements OnInit {
                       <h1 class="mb-0 text-left text-white">
                           <span class="typing">Hi! I’m
                               <strong>Khaled Weslati</strong> - experienced Front-End Developer from Tunisia</span>
-                          <a href="/#/resume"
-                              class="btn-go show-after-typing ml-4">
-                              <i class="fa fa-angle-down"></i>
-                          </a>
                       </h1>
                   </div>
               </div>
@@ -68,15 +64,15 @@ export class SwiperSlider implements OnInit {
       `
     },
     {
-      data_thumb_url: '/assets/img/projects/project02.jpg',
-      background_image: '/assets/img/projects/project02.jpg',
+      data_thumb_url: '/assets/img/photos/developer/home-1-thumb.jpg',
+      background_image: '/assets/img/photos/developer/home-1.jpg',
       data_title: '2/3',
       data_animate: 'fadeInRight',
       content: ``
     },
     {
-      data_thumb_url: '/assets/img/projects/project03.jpg',
-      background_image: '/assets/img/projects/project03.jpg',
+      data_thumb_url: '/assets/img/photos/developer/home-4-thumb.jpg',
+      background_image: '/assets/img/photos/developer/home-4.jpg',
       data_title: '3/3',
       data_animate: 'fadeInRight',
       content: ``
@@ -170,21 +166,21 @@ export class SwiperSlider implements OnInit {
       self.indexswiper.swiper().params.pagination.renderBullet = function (index, className) {
         return '<span class="' + className + '"><span class="tooltip-content"><span class="tooltip-text"><span class="tooltip-inner"><img src="'+self.articles[index].data_thumb_url+'" class="img-responsive" style="width: 100%; height: 100%;"></span></span></span></span>';
       }
-      // var targetHeight = $(this.container).outerHeight();
-      // var position = $(this.container).position();
-      // $(window).scroll(function () {
-      //   var scrollPercent = (targetHeight - (window.scrollY - position.top));
-      //   // console.log('scrollpercent: '+ scrollPercent);
-      //   if ((scrollPercent >= 0) && (window.scrollY > (position.top - (targetHeight * 2)))) {
-      //     (<any>$('.swiper-slide header .container-inner',self.container)).css({
-      //       'top': 1 - (((scrollPercent - targetHeight) / 2) + 50) + "px",
-      //       'opacity': (scrollPercent) / targetHeight
-      //     });
-      //     $('.swiper-slide header .header-image').css({
-      //       'background-position': "50% " + (((window.scrollY - position.top) * 0.3) - 25) + "px"
-      //     });
-      //   }
-      // });
+      var targetHeight = $(self.container).outerHeight();
+      var position = $(self.container).position();
+      $(window).scroll(function () {
+        var scrollPercent = (targetHeight - (window.scrollY - position.top));
+        // console.log('scrollpercent: '+ scrollPercent);
+        if ((scrollPercent >= 0) && (window.scrollY > (position.top - (targetHeight * 2)))) {
+          // (<any>$('swiper-slider .swiper-slide header .container-fluid')).css({
+          //   'top': 1 - (((scrollPercent - targetHeight) / 2) + 50) + "px",
+          //   'opacity': (scrollPercent) / targetHeight
+          // });
+          $('.swiper-slide header .header-image').css({
+            'background-position': "50% " + (((window.scrollY - position.top) * 0.3) - 25) + "px"
+          });
+        }
+      });
     }
     firstinit(){
       setTimeout(() =>{

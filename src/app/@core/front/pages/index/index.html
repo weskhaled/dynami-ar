@@ -1,7 +1,7 @@
 <!-- Content -->
 <div id="content">
     <!-- Section - Start -->
-    <section id="start" class="section section-home-basic fullheight dark bg-dark" data-scheme="dark" data-local-scroll>
+    <section id="start" class="section section-home-basic fullheight dark bg-dark" data-scheme="dark" data-local-scroll data-class-up="resume" data-class-dwn="start">
         <div class="swiper-pre-component" >
             <swiper-slider></swiper-slider>
         </div>
@@ -54,7 +54,7 @@
     </section>
 
     <!-- Section - Resume -->
-    <section id="resume" class="section" data-scheme="light">
+    <section id="resume" class="section" data-scheme="light"  data-class-up="start" data-class-dwn="resume">
 
         <!-- Section Content -->
         <div class="section-content">
@@ -335,7 +335,7 @@
     </section>
 
     <!-- Section - Portfolio -->
-    <section id="portfolio" class="section" data-scheme="light">
+    <section id="portfolio" class="section" data-scheme="light"  data-class-up="resume" data-class-dwn="portfolio">
 
         <!-- Section Content -->
         <div class="section-content">
@@ -477,7 +477,7 @@
     </section>
 
     <!-- Section - Contact -->
-    <section id="contact" class="section section-contact fullheight bg-dark dark" [class.map-visible]="enabledmap" data-scheme="dark">
+    <section id="contact" class="section section-contact fullheight bg-dark dark" [class.map-visible]="enabledmap" data-scheme="dark"  data-class-up="portfolio" data-class-dwn="contact">
 
         <!-- BG Map -->
                 <agm-map id="google-map" class="bg-map bg-map-overlay dark"
@@ -512,7 +512,7 @@
                             <div class="module">
                                 <span class="mr-2">Where am I located?</span>
                                 <label class="selector">
-                                    <mat-slide-toggle [(ngModel)]="enabledmap"></mat-slide-toggle>
+                                    <mat-slide-toggle color="primary" [(ngModel)]="enabledmap"></mat-slide-toggle>
                                 </label>
                             </div>
                             <div class="module">
