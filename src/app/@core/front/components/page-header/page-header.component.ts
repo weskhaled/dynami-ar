@@ -12,13 +12,16 @@ import { Router } from '@angular/router';
 })
 export class PageHeader implements OnInit {  
   public config: PerfectScrollbarConfigInterface = {};
+  islogedin:boolean=false;
     sidebaropen:boolean = false;
     username : any = null;
     constructor(private renderer: Renderer2,private router: Router,private userService: UserService,private authenticationService: AuthenticationService) {
 
     }
     ngOnInit() {
-
+      if (localStorage.getItem('currentUser')) {
+        this.islogedin = true;
+     }   
     }
     logoutuser() {
       
@@ -64,7 +67,6 @@ export class PageHeader implements OnInit {
     }, 0);
   }
     togglesidebarOpen($event){
-      console.log($event);
       this.sidebaropen = !this.sidebaropen;
       if (this.sidebaropen) {
         this.renderer.addClass(document.body, 'navigation-open');

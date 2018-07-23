@@ -1,0 +1,18 @@
+<div class="dialog-wrap containerdialog modal">
+    <div class="modal-content">
+        <div class="modal-header clearfix text-left">
+            <button type="button" class="close" mat-dialog-close [mat-dialog-close]="false">
+                <i class="pg-close fs-16"></i>
+            </button>
+            <h5 class="semi-bold">{{title}}</h5>
+            <p class="p-b-10">{{client.lastname}}, {{client.firstname}}</p>
+        </div>
+        <div class="modal-body">
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger btn-cons btn-sm pull-left inline" (click)="delete()">supprimer</button>
+            <button type="button" class="btn btn-default btn-cons btn-sm no-margin pull-left inline" [mat-dialog-close]="false">annuler</button>
+        </div>
+    </div>
+</div>

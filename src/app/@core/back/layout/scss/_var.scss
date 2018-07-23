@@ -3,7 +3,7 @@
 // Copyright Reserved Revox - 2014
 // --------------------------------------------------
 
-$base-img-url: "../img" !default;
+$base-img-url: "/assets/back/img" !default;
 $assets-url: "/assets" !default;
 
 // Global Color
@@ -144,8 +144,8 @@ $color-info-darker: mix($color-info, $color-black, $mix-percentage-darker) !defa
 
 // Email colors
 // $sidebar-background-color : $color-menu-dark !default;
-// $_sidebar-background-color: blend-multiply($color-menu-light, $color-menu-light);
-// $sidebar-background-color : mix($_sidebar-background-color , #000, 80%);
+$_sidebar-background-color: blend-multiply($color-menu-light, $color-menu-light);
+$sidebar-background-color : mix($_sidebar-background-color , #000, 80%);
 
 $secondary-sidebar-width : 250px;
 // Components

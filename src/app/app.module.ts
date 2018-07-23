@@ -10,11 +10,12 @@ import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 // routing module
 import { AppRoutingModule } from './app-routing.module';
-import { AuthGuardService } from './_guards/auth-guard.service';
 import { AuthenticationService, UserService } from './@services/auth';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AuthGuard } from './_guards/auth-guard.service';
+import { JwtInterceptor } from './_helpers/jwt.interceptor';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -35,8 +36,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FormsModule
   ],
   providers: [
-    AuthGuardService,
+    AuthGuard,
     AuthenticationService,
+    // UserService,
     UserService,
     MaterialModule,
     {

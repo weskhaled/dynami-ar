@@ -8,9 +8,9 @@ const routes: Routes = [{
   children: [
     {
       path: 'index',
-      loadChildren: './pages/index/index.module#IndexModule'
+      loadChildren: './pages/landing/landing.module#LandingModule'
     },
-    { path: '', redirectTo: 'index', pathMatch: 'full' },
+    { path: '', redirectTo: 'index', pathMatch: 'full' }
     // { path: '**', redirectTo: 'index' },
   ],
 }];

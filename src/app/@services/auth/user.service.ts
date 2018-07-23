@@ -10,6 +10,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import { User } from '../../models/index';
 import { AuthenticationService } from './authentication.service';
+import { ENV } from '../../@core/env';
 
 @Injectable()
 export class UserService {
@@ -23,11 +24,13 @@ export class UserService {
 
     getUsers(): Observable<any> {
         // add authorization header with jwt token
-        // let headers = new Headers({ 'Authorization': 'Bearer ' + this.authenticationService.token });
-        // let options = new RequestOptions({ headers: headers });
+        let options = {
+          headers : new HttpHeaders({ 'Content-Type': 'application/json','Authorization': 'Bearer ' + this.authenticationService.token})
+        }
+          // let options = new RequestOptions({ headers: headers });
 
         // get users from api
-        return this.http.get('http://medicallabs.wes/api/v1/user', this.httpOptions).pipe(
+        return this.http.get(ENV.URL_GET_USER, options).pipe(
             map((response: any) => {
                 let res = response;
                 return res;

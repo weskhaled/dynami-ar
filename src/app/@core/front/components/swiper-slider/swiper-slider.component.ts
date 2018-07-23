@@ -92,10 +92,7 @@ export class SwiperSlider implements OnInit {
     pagination: {
       el: '.swiper-pagination',
       clickable:true,
-      type: 'bullets',
-      // renderBullet: function (index, className) {
-      //   return '<span class="' + className + '"><span class="tooltip-content"><span class="tooltip-text"><span class="tooltip-inner"><img src="'+this.articles[index].data_thumb_url+'" class="img-responsive" style="width: 100%; height: 100%;"></span></span></span></span>';
-      // }
+      type: 'bullets'
     },
     autoplay:{
       delay: this.autoplaydelay,

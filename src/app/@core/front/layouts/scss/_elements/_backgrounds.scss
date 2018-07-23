@@ -22,14 +22,15 @@
 	background-repeat: no-repeat; 
 	z-index: 0;
 	@include transition(opacity 0.6s ease-in-out);
-	@include opacity(0);
+	// @include opacity(0);
 
 	&.loaded {
 		@include opacity(1);
 	}
 
 	> img {
-		display: none;
+		// display: none;
+		width: 100%;
 		position: absolute;
 	}
 

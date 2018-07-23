@@ -14,6 +14,10 @@ export class LoginComponent implements OnInit {
   public config: PerfectScrollbarConfigInterface = {};
   deviceObjects = [{name: 'test 111111111', value: '1'}, {name: 'test 22222222', value: '2'}, {name: 'test 33333333333', value: '3'}];
   constructor(private seo: SeoService, private renderer: Renderer2,private router: Router,private authenticationService: AuthenticationService) {
+    this.renderer.removeClass(document.body, 'navigation-panel');
+    this.renderer.removeClass(document.body, 'page-scrolling');
+    this.renderer.removeClass(document.body, 'dark-scheme');
+    this.renderer.removeClass(document.body, 'loaded');
   }
   ngOnInit() {
     this.seo.generateTags({
@@ -37,7 +41,7 @@ export class LoginComponent implements OnInit {
       this.authenticationService.login(this.model.username, this.model.password)
           .subscribe(result => {
               if (result === true) {
-                  this.router.navigate(['back/index']);
+                  this.router.navigate(['admin/']);
               } else {
                   this.error = 'Username or password is incorrect';
                   this.loading = false;

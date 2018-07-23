@@ -1,0 +1,79 @@
+<!-- START PAGE CONTENT -->
+<div class="content sm-gutter">
+    <!-- START JUMBOTRON -->
+    <div class="jumbotron" data-pages="parallax">
+        <div class=" container-fluid   container-fixed-lg sm-p-l-0 sm-p-r-0">
+            <div class="inner">
+                <!-- START BREADCRUMB -->
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="#">Pages</a>
+                    </li>
+                    <li class="breadcrumb-item active">Liste des Clients</li>
+                </ol>
+                <!-- END BREADCRUMB -->
+            </div>
+        </div>
+    </div>
+    <!-- END JUMBOTRON -->
+    <!-- START CONTAINER FLUID -->
+    <div class="container-fluid container-fixed-lg">
+        <div class="row">
+            <div class="card card-transparent">
+                <div class="card-header">
+                    <div class="card-title">liste des Clients
+                    </div>
+                    <div class="pull-right">
+                        <div class="col-xs-12">
+                          <button id="show-modal" class="btn btn-default" (click)="addnew()"><i class="fa fa-plus"></i> Ajouter Client
+                          </button>
+                        </div>
+                      </div>
+                    <div class="export-options-container"></div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="card-block">
+                    <ngx-datatable 
+                    #myTable        
+                    class="material"
+                    [rows]="rows"
+                    [scrollbarV]="false"
+                    [columnMode]="'force'"
+                    [headerHeight]="50"
+                    [footerHeight]="50"
+                    [rowHeight]="'50'"
+                    [externalPaging]="true"
+                    [count]="page.totalElements"
+                    [offset]="page.pageNumber"
+                    [limit]="page.size"
+                    [loadingIndicator]="isLoading"
+                    (page)='setPage($event)'>
+                        <ngx-datatable-column name="Name" prop="firstname" [width]="100">
+                            <ng-template let-value="value" ngx-datatable-cell-template>
+                                {{value}}
+                            </ng-template>
+                        </ngx-datatable-column>
+                        <ngx-datatable-column name="Prenom" prop="lastname">
+                            <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                                {{value}}
+                            </ng-template>
+                        </ngx-datatable-column>
+                        <ngx-datatable-column name="Age" prop="age">
+                            <ng-template let-value="value" ngx-datatable-cell-template>
+                                {{value}}
+                            </ng-template>
+                        </ngx-datatable-column>
+                        <ngx-datatable-column name="Action">
+                            <ng-template let-row="row" ngx-datatable-cell-template>
+                                    <button class="btn btn-xs  btn-rounded btn-danger m-r-5" (click)="deleteclient(row)"><i class="fa fa-trash-o"></i> supprimer</button>
+                                    <button class="btn btn-xs  btn-rounded btn-primary" (click)="editclient(row)"><i class="fa fa-pencil"></i> editer</button>
+                            </ng-template>
+                        </ngx-datatable-column>
+                    </ngx-datatable>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END CONTAINER FLUID -->
+</div>
+<!-- END PAGE CONTENT -->

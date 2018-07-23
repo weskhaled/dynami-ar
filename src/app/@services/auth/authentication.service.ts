@@ -35,7 +35,7 @@ export class AuthenticationService {
                 let res = response;
                 // login successful if there's a jwt token in the response
                 let token = response.access_token;
-                if (!!token) {
+                if (token) {
                     // set token property
                     this.token = token;
 

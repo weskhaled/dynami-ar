@@ -3,9 +3,66 @@
 @import '../node_modules/bootstrap/scss/bootstrap';
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import '~perfect-scrollbar/css/perfect-scrollbar.css';
+@import '~@swimlane/ngx-datatable/release/index.css';
+@import '~@swimlane/ngx-datatable/release/themes/material.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';
 @import '~swiper/dist/css/swiper.min.css';
 @import '../node_modules/font-awesome/scss/font-awesome';
 @import '/app/@core/front/layouts/fonts/et-line-font.css';
 @import '/app/@core/front/layouts/fonts/feather-icons.css';
 @import '/app/@core/front/layouts/fonts/pages-icons.css';
+@import '/app/@core/back/layout/scss/pages.scss';
 @import '/app/@core/front/layouts/scss/theme-blue.scss';
+
+/* You can add global styles to this file, and also import other style files */
+.sidebar-visible nav.page-sidebar {
+transform: translate(210px, 0px);
+}
+.page-sidebar:hover{
+transform: translate(210px, 0px);
+.sidebar-header .sidebar-header-controls {
+    -webkit-transform: translate3d(110px, 0, 0);
+    transform: translate3d(110px, 0, 0);
+    -ms-transform: translate(110px, 0);
+}
+}
+.sidebar-open .page-sidebar{
+display: block;
+}
+
+perfect-scrollbar>.ps.ps--scrolling-y>.ps__rail-y {
+background-color: transparent!important;
+}
+perfect-scrollbar>.ps.ps--active-y>.ps__rail-y {
+width: 8px!important;
+}
+.ps__thumb-y {
+width: 4px!important;
+border-radius: 0!important;
+}
+perfect-scrollbar>.ps.ps--active-y>.ps__rail-y:hover {
+width: 8px!important;
+}
+.ps__rail-y:focus>.ps__thumb-y, .ps__rail-y:hover>.ps__thumb-y {
+background-color: #999;
+width: 4px!important;
+}
+
+select {
+-webkit-appearance: menulist!important;
+border-radius: 0!important;
+cursor: pointer;
+}
+.page-container .page-content-wrapper .content:only-child {
+    padding-bottom: 69px!important;
+}
+.mat-dialog-container{
+padding: 0!important;
+}
+// .modal .close {
+// margin: -10px -15px;
+// }
+.cdk-global-scrollblock {
+    height: 100vh;
+    overflow-y: visible;
+}

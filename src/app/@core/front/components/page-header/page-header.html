@@ -8,7 +8,8 @@
             <li class="nav-item"><a data-href="#resume" href="javascript:void(0)" [ngx-scroll-to]="'#resume'" class="nav-link">Resume</a></li>
             <li class="nav-item"><a data-href="#portfolio" href="javascript:void(0)" [ngx-scroll-to]="'#portfolio'" class="nav-link">Portfolio</a></li>
             <li class="nav-item"><a data-href="#contact" href="javascript:void(0)" [ngx-scroll-to]="'#contact'" class="nav-link">Contact</a></li>
-            <li class="nav-item"><a routerLink="/auth/login" class="nav-link">Login</a></li>
+            <li class="nav-item" *ngIf="!islogedin"><a routerLink="/auth/login" class="nav-link">Login</a></li>
+            <li class="nav-item" *ngIf="islogedin"><a routerLink="/admin/" class="nav-link">admin</a></li>
         </ul>
     </div>
     
