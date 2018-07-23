@@ -24,7 +24,7 @@ export class ClientComponent implements AfterViewInit, OnInit {
   rows = new Array<Client>();
   @ViewChild('myTable') table;
 
-  private isLoading: boolean = false;
+  public isLoading: boolean = false;
   constructor(
     private seo: SeoService,
     private renderer: Renderer2,

@@ -15,7 +15,7 @@ import { ClientService } from '../../../../../../@services/admin/client.service'
 })
 export class ConfirmDialog {
   public title = 'are you want to delete this client ?';
-  private client:Client;
+  public client:Client;
   constructor(
     private clientService: ClientService,
     public dialogRef: MatDialogRef<ConfirmDialog>,

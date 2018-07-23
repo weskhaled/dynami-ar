@@ -15,7 +15,7 @@ import { ClientService } from '../../../../../../@services/admin/client.service'
 })
 export class EditClientDialog {
   public title = 'Editer Client Info';
-  private client:Client;
+  public client:Client;
   constructor(
     private clientService: ClientService,
     public dialogRef: MatDialogRef<EditClientDialog>,

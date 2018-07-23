@@ -16,7 +16,7 @@ import { ClientService } from '../../../../../../@services/admin/client.service'
 })
 export class AddClientDialog {
   public title = 'Ajouter Client';
-  private client:Client = new Client(null,'','',null,'') ;
+  public client:Client = new Client(null,'','',null,'') ;
   constructor(
     private clientService: ClientService,
     public dialogRef: MatDialogRef<AddClientDialog>,
