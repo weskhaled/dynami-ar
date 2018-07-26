@@ -7,7 +7,7 @@ import { SeoService } from '../../../../@services/front/seo.services';
 // import * as pages from '../../../@core/layouts/user/js/pages.js';
 // declare var pages : any;
 @Component({
-  selector: 'IndexComponent',
+  selector: 'DashComponent',
   templateUrl: './index.html',
   styleUrls: ['./style.scss']
 })

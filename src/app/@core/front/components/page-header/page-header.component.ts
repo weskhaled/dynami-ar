@@ -42,7 +42,7 @@ export class PageHeader implements OnInit {
               else $(this).removeClass('active');
           });
       }
-      $('indexcomponent section.section').each(function (index) {
+      $('landingcomponent section.section').each(function (index) {
         var directionscroll = 'down';
         var $element = $( this );
         new Waypoint({

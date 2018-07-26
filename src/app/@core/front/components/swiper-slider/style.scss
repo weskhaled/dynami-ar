@@ -46,6 +46,9 @@
     width: 100%;
     // height: auto;
     position: relative;
+    .container-fluid{
+        position: relative;
+    }
 }
 .admincntr{
     position: relative;
@@ -56,4 +59,4 @@
         right: 0;
     }
 }
-
+  

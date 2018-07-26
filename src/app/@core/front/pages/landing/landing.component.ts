@@ -84,7 +84,7 @@ export class LandingComponent implements OnInit {
           });
         });
       });
-    }, 0);
+    }, 250);
 
   }
 

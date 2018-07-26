@@ -1,0 +1,177 @@
+#ajax-loading-screen {
+    background-color: rgba(0, 0, 0, 0.5294117647058824);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    z-index: 1000000000;
+}
+#ajax-loading-screen .loading-icon{
+  background-repeat:no-repeat;
+  background-position:center center;
+  display:block;
+  position:absolute;
+  opacity:1;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%}
+
+.default-loading-icon{    
+  top:50%;     
+  border-radius:100%;     
+  height:40px;     
+  width:40px;     
+  margin:0 auto;     
+  display:block;     
+  position:relative;      
+  border:3px solid #e5e5e5;     
+  margin-top:-20px}
+
+.loading-icon .material-icon .spinner{  
+  width:60px;   
+  height:60px;   
+  position:absolute;   
+  top:0;   
+  left:0;   
+  right:0;   
+  bottom:0;   
+  margin:auto
+}
+.loading-icon .material-icon {
+    top: 50%;
+    height: 65px;
+    width: 65px;
+    position: relative;
+    margin: -32px auto 0 auto;
+    display: block;
+}
+.loading-icon .material-icon .spinner{
+  -webkit-animation:material-rotate-all 1s linear infinite;
+  animation:material-rotate-all 1s linear infinite 
+}
+
+.loading-icon .material-icon .spinner .right-side, 
+.loading-icon .material-icon .spinner .left-side{
+  -webkit-animation:material-fade-in-first 1.2s linear infinite alternate; 
+  animation:material-fade-in-first 1.2s linear infinite alternate
+}
+.loading-icon .material-icon .spinner.color-2 .right-side, 
+.loading-icon .material-icon .spinner.color-2 .left-side{
+  -webkit-animation:material-fade-in-second 1.2s linear infinite alternate; animation:material-fade-in-second 1.2s linear infinite alternate
+}
+
+.loading-icon .material-icon .right-side, .loading-icon .material-icon .left-side{  
+  width:50%;   
+  height:100%;   
+  position:absolute;   
+  top:0;   
+  overflow:hidden
+}
+
+.loading-icon .material-icon .left-side{
+  left:0
+}
+.loading-icon .material-icon .right-side{
+  right:0;
+}
+
+.loading-icon .material-icon .bar{ 
+  width:100%;   
+  height:100%;   
+  -moz-border-radius:200px 0 0 200px;   
+  -webkit-border-radius:200px;  
+  border-radius:200px 0 0 200px;   
+  border:6px solid #666;   
+  position:relative}
+.loading-icon .material-icon .bar:after{  
+  content:"";   
+  width:6px;   
+  height:6px;   
+  display:block;  
+  background:#666;  
+  position:absolute;   
+  -moz-border-radius:6px;   
+  -webkit-border-radius:6px;   
+  border-radius:6px
+}
+.loading-icon .material-icon .right-side .bar{  
+  -moz-border-radius:0 200px 200px 0;   
+  -webkit-border-radius:0;   border-radius:0 200px 200px 0;   
+  border-left:none;   
+  -webkit-transform:rotate(-10deg);   
+  -webkit-transform-origin:left center;   
+  transform:rotate(-10deg);   
+  transform-origin:left center;   
+  -webkit-animation:material-rotate-right 0.75s linear infinite alternate;   animation:material-rotate-right 0.75s linear infinite alternate
+}
+.loading-icon .material-icon .right-side .bar:after{  
+  bottom:-6px;   left:-3px
+}
+.loading-icon .material-icon .left-side .bar{  
+  border-right:none;   
+  -webkit-transform:rotate(10deg);   
+  transform:rotate(10deg);   
+  -webkit-transform-origin:right center;   
+  transform-origin:right center;   
+  -webkit-animation:material-rotate-left 0.75s linear infinite alternate;   animation:material-rotate-left 0.75s linear infinite alternate
+}
+.loading-icon .material-icon .left-side .bar:after{  
+  bottom:-6px;   
+  right:-3px}
+
+
+.loading-icon .material-icon .bar {
+    border-color: #ff1053;
+}
+.loading-icon .material-icon .bar:after {
+    background-color: #ff1053;
+}
+.loading-icon .material-icon .color-2 .bar {
+    border-color: #3452ff;
+}
+.loading-icon .material-icon .color-2 .bar:after {
+    background-color: #3452ff;
+}
+@keyframes material-rotate-left{  
+  to{    
+    transform:rotate(30deg)
+  }
+  from{    
+    transform:rotate(175deg)
+  }
+}
+@keyframes material-rotate-right{  
+  from{    
+    transform:rotate(-175deg)
+  }
+  to{    
+    transform:rotate(-30deg)
+  }
+}
+@keyframes material-rotate-all{  
+  from{    
+    transform:rotate(0deg)
+  }
+  to{    
+    transform:rotate(-360deg)
+  }
+}
+@keyframes material-fade-in-first{  
+  from{  
+    opacity:1
+  }
+  to{  
+    opacity:0
+  }
+}
+@keyframes material-fade-in-second{  
+  from{  
+    opacity:0
+  }
+  to{  
+    opacity:1
+  }
+}

@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'variables';
 @import '../node_modules/bootstrap/scss/bootstrap';
+@import '../node_modules/animate.css/animate.css';
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import '~perfect-scrollbar/css/perfect-scrollbar.css';
 @import '~@swimlane/ngx-datatable/release/index.css';
@@ -21,9 +22,9 @@ transform: translate(210px, 0px);
 .page-sidebar:hover{
 transform: translate(210px, 0px);
 .sidebar-header .sidebar-header-controls {
-    -webkit-transform: translate3d(110px, 0, 0);
-    transform: translate3d(110px, 0, 0);
-    -ms-transform: translate(110px, 0);
+    -webkit-transform: translate3d(95px, 0, 0);
+    transform: translate3d(95px, 0, 0);
+    -ms-transform: translate(95px, 0);
 }
 }
 .sidebar-open .page-sidebar{
@@ -66,3 +67,246 @@ padding: 0!important;
     height: 100vh;
     overflow-y: visible;
 }
+
+/*logo text*/
+.logo-text
+{
+color: black;
+padding: 5px 15px;
+border: 2px solid;
+font-weight: 600;
+letter-spacing: 2px;
+display: inline-block;
+line-height: 21px;
+  .light {
+    font-weight: 200 !important;
+  }
+}
+
+
+  /*window screen*/
+  .windowscreen{
+    /*margin: 5% auto;*/
+    overflow: hidden;
+    width: 100%;
+    .screen {
+    position: relative;
+    height: auto;
+    background-color: #fff;
+    border-radius: 3px 3px 0 0!important;
+    color: white;
+   }
+    .screen .top-bar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-top: 0;
+    padding: 0;
+    background-color: #E6E7E8;
+    border-radius: 3px 3px 0 0!important;
+    z-index: 2;
+    color: #555;
+    font-size: 14px;
+    line-height: 0;
+    text-align: left;
+   }
+    .screen .top-bar .nav-tabs{
+    position: relative;
+    top: 0;
+    text-align: left;
+    width: 100%;
+    background: transparent;
+    padding: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 0;
+    padding: 0;
+    border-bottom: 0;
+    -webkit-box-shadow:  0px 2px 0px 0px rgba(255, 255, 255, 1);
+    -moz-box-shadow:  0px 2px 0px 0px rgba(255, 255, 255, 1);
+    box-shadow: 0px 2px 0px 0px rgba(255, 255, 255, 1);
+   }
+    .screen .top-bar .nav-tabs li{
+    position: relative;
+    left: 50px;
+   }
+    .screen .top-bar .nav>li>a:hover {
+    /*background-color: transparent;*/
+    color: #000;
+   }
+    .screen .top-bar .title>a:not(.close) {
+    width: auto;
+    display: inline-block;
+    opacity: .75;
+    color: #000;
+    padding: 0 10px;
+    line-height: 32px;
+    margin: 0;
+    padding-right: 20px;
+    border: 0!important;
+    /*	border-radius: 2px 2px 0 0!important;*/
+   }
+    .screen .top-bar .title> .close{
+        color: #777;
+        padding-top: 0px;
+        line-height: inherit;
+        position: absolute;
+        right: 5px;
+        top: calc(50% + 0px);
+        box-shadow: none !important;
+        padding: 0px;
+        background-color: transparent !important;
+        border: 0;
+        text-align: right;
+        text-shadow: none;
+        border-radius: 50% !important;
+        pointer-events: auto !important;
+        cursor: pointer;
+        z-index: 2;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        font-size: 12px;
+        line-height: 5px;
+        /* margin: 0px 5px; */
+   }
+    .screen .top-bar .title> .close:hover{
+    color: red;	
+   }
+    .screen .top-bar .title.active>a{
+    opacity: 1;
+    pointer-events: none;
+    background-color:#fff;
+    -webkit-box-shadow: inset 0px 2px 0px 0px #00AAFF;
+    -moz-box-shadow: inset 0px 2px 0px 0px #00AAFF;
+    box-shadow: inset 0px 2px 0px 0px #00AAFF;
+   }
+    .screen .top-bar .buttons {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: 50%;
+    margin-top: -4px;
+    background: #FFC42B;
+    border-radius: 50%!important;
+    left: 22px;
+   }
+    .screen .top-bar .buttons:after,
+    .screen .top-bar .buttons:before {
+    position: absolute;
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+   }
+    .screen .top-bar .buttons:before {
+    left: -12px;
+    background-color: #dc2510;
+   }
+    .screen .top-bar .buttons:after {
+    left: 12px;
+    background-color: #5EC3AF;
+   }
+    .screen .tab-content{
+    padding: 0;
+    background-color: transparent;
+    border: none;
+   }
+    .screen .tab-content .tab-pane{
+    position: relative;
+   }
+    .screen code {
+    position: relative;
+    /* float: right; */
+    display: table-cell;
+    width: 10000px;
+    padding: 5px;
+    padding-bottom: 0;
+    text-align: left;
+    font-size: 14px;
+    line-height: 22px;
+    color: #000;
+    background-color: transparent;
+    /* text-shadow: 0 1px white; */
+    direction: ltr;
+    white-space: pre-wrap;
+    word-spacing: normal;
+    word-break: normal;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+   }
+    .screen code .comment{
+    color: #999;
+    text-shadow: none;
+   }
+    .screen code span{
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+   }
+    .line-numbers-rows {
+    position: relative;
+    z-index: 2;
+    /* float: left; */
+    /* border-radius: 0 0 0 3px!important; */
+    pointer-events: none;
+    padding-top: 5px;
+    font-size: 13px;
+    line-height: 22px;
+    left: 0;
+    width: auto;
+    /*min-width: 30px;*/
+    display: table-cell;
+    letter-spacing: -1px;
+    background: #ccc;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+   }
+    .line-numbers-rows > span {
+    pointer-events: none;
+    display: block;
+    counter-increment: linenumber;
+   }
+    code > span.cursor {
+    margin-left: 1px;
+    background-color: #000;
+    position: relative;
+    display: inline-block;
+    top: 3px;
+    width: 1px;
+    height: 16px;
+    -webkit-animation: blink 1s ease 4s infinite;
+    animation: blink 1s ease 4s infinite;
+   }
+    .line-numbers-rows > span:before {
+    content: counter(linenumber);
+    color: #333;
+    display: block;
+    padding: 0 10px;
+    text-align: right;
+   }
+   }
+   @-webkit-keyframes blink {
+   0% {
+    opacity: 0;
+   }
+   100% {
+    opacity: 1;
+   }
+   }
+   
+   @keyframes blink {
+   0% {
+    opacity: 0;
+   }
+   100% {
+    opacity: 1;
+   }
+   }
+   

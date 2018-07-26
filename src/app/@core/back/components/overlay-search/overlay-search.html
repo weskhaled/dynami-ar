@@ -1,14 +1,17 @@
-<div class="overlay hide" data-pages="search">
+<div class="overlay" #overlay data-pages="search" id="overlay-search-wrapper">
         <!-- BEGIN Overlay Content !-->
         <div class="overlay-content has-results m-t-20">
             <!-- BEGIN Overlay Header !-->
             <div class="container-fluid">
                 <!-- BEGIN Overlay Logo !-->
-                <img class="overlay-brand" src="assets/img/logo.png" alt="logo" data-src="assets/img/logo.png" data-src-retina="assets/img/logo_2x.png"
-                    width="78" height="22">
+                <a class="" href="#" rel="home">
+                    <span class="logo-text text-black">
+                        <span class="light">YOU</span>NGX
+                    </span>
+                </a>
                 <!-- END Overlay Logo !-->
                 <!-- BEGIN Overlay Close !-->
-                <a href="#" class="close-icon-light overlay-close text-black fs-16">
+                <a href="javascript:;" data-toggle="search" class="close-icon-light overlay-close text-black fs-16">
                     <i class="pg-close"></i>
                 </a>
                 <!-- END Overlay Close !-->

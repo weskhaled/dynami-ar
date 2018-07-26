@@ -5,6 +5,7 @@ import { routing }        from './login.routing';
 import { LoginComponent } from './login.component';
 import { MaterialModule } from '../../../@core/material.module';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { LoadingComponent } from '../../../_shared/loading/loading.component';
 
 @NgModule({
   imports: [
@@ -12,9 +13,10 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
     MaterialModule,
     CommonModule,
     FormsModule,
-    routing
+    routing,
+    
   ],
-  declarations: [LoginComponent],
+  declarations: [LoginComponent,LoadingComponent],
   providers: []
 })
 export class LoginModule {}

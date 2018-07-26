@@ -21,6 +21,7 @@ export class Back implements OnInit {
     this.renderer.removeClass(document.body, 'page-scrolling');
     this.renderer.removeClass(document.body, 'dark-scheme');
     this.renderer.removeClass(document.body, 'loaded');
+    this.renderer.removeStyle(document.body, 'padding-bottom');
   }
   ngOnInit() {
     this.seo.generateTags({
@@ -29,6 +30,19 @@ export class Back implements OnInit {
       image: 'https://instafire-app.firebaseapp.com/assets/meerkat.jpeg',
       slug: 'contact-page'
     })
+  }
+  ngAfterViewInit() {
+    let self = this;
+    setTimeout(() => {
+      this.search();
+    }, 250);
+  }
+  search() {
+    var $btnsearch = $('[data-toggle="search"]'),
+      $overlaysearch = $('#overlay-search-wrapper');
+    $btnsearch.on('click', function () {
+      $overlaysearch.toggleClass('visible');
+    });
   }
   togglePinSidebar($event){
     this.pinsidebar = !this.pinsidebar;

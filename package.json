@@ -27,6 +27,8 @@
     "@angular/platform-browser": "^6.0.2",
     "@angular/platform-browser-dynamic": "^6.0.2",
     "@angular/router": "^6.0.2",
+    "@ngrx/core": "^1.2.0",
+    "@ngrx/store": "^6.0.1",
     "@nicky-lenaers/ngx-scroll-to": "^1.0.0",
     "@swimlane/ngx-charts": "^8.1.0",
     "@swimlane/ngx-datatable": "^13.0.1",

@@ -292,8 +292,8 @@
                 -ms-transform: translate($layout-sidepanel-width - $layout-sidepanel-width-collapsed, 0) !important;
                 width: $layout-sidepanel-pin-width;
                 .sidebar-header .sidebar-header-controls {
-                    transform: translateX(70px);
-                    -webkit-transform: translateX(70px);
+                    transform: translateX(50px);
+                    -webkit-transform: translateX(50px);
                 }
                 .menu-items .icon-thumbnail {
                     transform: translate3d(-14px, 0, 0);

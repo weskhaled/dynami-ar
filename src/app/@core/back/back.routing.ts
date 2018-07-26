@@ -9,7 +9,7 @@ const routes: Routes = [{
   component: Back,
   children: [
     {
-      path: '/',
+      path: '',
       loadChildren: './pages/index/index.module#DashModule',
       canActivate: [AuthGuard]
     },
@@ -18,7 +18,7 @@ const routes: Routes = [{
       loadChildren: './pages/client/client.module#ClientModule',
       canActivate: [AuthGuard]
     },
-    { path: 'admin', redirectTo: '/admin/', pathMatch: 'full' },
+    { path: 'admin', redirectTo: '/admin', pathMatch: 'full' },
     // { path: '**', redirectTo: 'index' },
   ],
 }];

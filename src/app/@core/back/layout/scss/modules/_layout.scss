@@ -1309,6 +1309,24 @@ body {
   z-index:1010;
   padding-left: 64px;
   overflow:auto;
+
+  visibility: hidden;
+  opacity: 0;
+  display: block;
+  margin: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  pointer-events: none;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  &.visible {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
   .inline-block{
     display:inline-block;
   }

@@ -10,7 +10,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
   imports: [
     CommonModule,
     PerfectScrollbarModule,
-    AuthRoutingModule
+    AuthRoutingModule,
   ],
   providers: [SeoService],
   declarations: [Auth]
