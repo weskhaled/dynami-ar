@@ -43,7 +43,6 @@ export class Front implements OnInit {
     self.$footer = $('#footer');
     setTimeout(() => {
       self.window();
-      self.footer();
     }, 0);
   }
   window() {
@@ -94,8 +93,5 @@ export class Front implements OnInit {
     }
 
   }
-  footer() {
-    let self = this;
-    self.$body.css('padding-bottom', self.$footer.height() - 1 + 'px');
-  }
+
 }

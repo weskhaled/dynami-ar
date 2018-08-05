@@ -1,8 +1,8 @@
 import { NgModule }       from '@angular/core';
 import { CommonModule }   from '@angular/common';
 import { FormsModule }    from '@angular/forms';
-import { routing }        from './landing.routing';
-import { LandingComponent } from './landing.component';
+import { routing }        from './portfolio.routing';
+import { PortfolioComponent } from './portfolio.component';
 import { MaterialModule } from '../../../../@core/material.module';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { IsotopeModule } from 'ngx-isotope';
@@ -12,7 +12,6 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { SwiperSlider } from '../../components/swiper-slider/swiper-slider.component';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { AgmCoreModule } from '@agm/core';
-import { PageHeader } from '../../components/page-header/page-header.component';
 
 @NgModule({
   imports: [
@@ -38,7 +37,7 @@ import { PageHeader } from '../../components/page-header/page-header.component';
     CommonModule,
     routing
   ],
-  declarations: [LandingComponent,SwiperSlider,PageHeader],
+  declarations: [PortfolioComponent],
   providers: []
 })
-export class LandingModule {}
+export class PortfolioModule {}

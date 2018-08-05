@@ -54,7 +54,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
       useValue: DEFAULT_SWIPER_CONFIG
     }
   ],
-  declarations: [Front, PageHeader]
+  declarations: [Front]
 })
 export class FrontModule {
 }

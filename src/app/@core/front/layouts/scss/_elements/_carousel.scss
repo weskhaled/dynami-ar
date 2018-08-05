@@ -203,7 +203,10 @@
   }
   
   .swiper-container .swiper-slide .container {
-    padding: 65px 20px;
+    padding: 35px 20px;
+    position: relative;
+    z-index: 90;
+    color: white!important;
   }
   
   
@@ -251,8 +254,8 @@
     opacity: 1!important;
     float: left;
     margin: 5px!important;
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%!important;
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0);
     -webkit-transition: box-shadow 0.3s ease;
@@ -274,8 +277,8 @@
   }
   
   .swiper-pagination-bullet.swiper-pagination-bullet-active:before {
-    -webkit-transform: scale(0.6);
-    transform: scale(0.6);
+    -webkit-transform: scale(0.35);
+    transform: scale(0.35);
     background-color: #fff;
   }
   

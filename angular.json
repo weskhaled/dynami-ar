@@ -41,6 +41,7 @@
               "./node_modules/imagesloaded/imagesloaded.pkgd.js",
               "./node_modules/jquery.appear/jquery.appear.js",
               "./node_modules/typed.js/lib/typed.min.js",
+              "./node_modules/plyr/dist/plyr.js",
               "./node_modules/snapsvg/dist/snap.svg-min.js"
             ]
           },

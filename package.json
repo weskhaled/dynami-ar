@@ -57,6 +57,7 @@
     "ngx-perfect-scrollbar": "^6.2.0",
     "ngx-swiper-wrapper": "^6.3.0",
     "path": "^0.12.7",
+    "plyr": "^3.3.22",
     "popper.js": "^1.14.3",
     "rxjs": "^6.0.0",
     "snapsvg": "^0.5.1",

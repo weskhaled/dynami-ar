@@ -16,6 +16,9 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 })
 export class LandingComponent implements OnInit {
   public config: PerfectScrollbarConfigInterface = {};
+  $body: any;
+  $content: any;
+  $footer: any;
   // google maps zoom level
   zoom: number = 8;
   // initial center position for the map
@@ -46,10 +49,14 @@ export class LandingComponent implements OnInit {
   }
   ngAfterViewInit() {
     let self = this;
+    self.$body = $('body');
+    self.$content = $('#content');
+    self.$footer = $('#footer');
     setTimeout(() => {
       self.points();
       self.animations($('body'));
       self.filter();
+      self.footer();
       (<any>$("#works-list")).isotope();
       (<any>$('.masonry')).isotope({
         itemSelector: '.masonry-item',
@@ -192,11 +199,9 @@ export class LandingComponent implements OnInit {
     }
 
 }
-  onChange(deviceValue) {
-    console.log(deviceValue);
-  }
-  addone() {
-    this.deviceObjects.push({ name: ' test 4444', value: '4' });
+  footer() {
+    let self = this;
+    self.$body.css('padding-bottom', self.$footer.height() - 1 + 'px');
   }
 }
 

@@ -10,6 +10,10 @@ const routes: Routes = [{
       path: 'index',
       loadChildren: './pages/landing/landing.module#LandingModule'
     },
+    {
+      path: 'portfolio',
+      loadChildren: './pages/portfolio/portfolio.module#PortfolioModule'
+    },
     { path: '', redirectTo: 'index', pathMatch: 'full' }
     // { path: '**', redirectTo: 'index' },
   ],

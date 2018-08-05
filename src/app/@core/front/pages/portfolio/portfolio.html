@@ -1,0 +1,270 @@
+<section class="Interstitial-wrapper">
+    <div class="Canvas">
+
+        <header class="Canvas-header">
+            <a routerLink="/index" class="return">
+                <svg class="svg-icon svg--arrow">
+                    <use xlink:href="#icon-arrow"></use>
+                </svg>
+            </a>
+            <h4 class="title font-montserrat no-margin text-uppercase">
+                Portfolios
+            </h4>
+        </header>
+
+        <main class="Canvas-slides">
+            <div class="swiper-container" #mainSlider="ngxSwiper" [swiper]="mainSliderOptions" (init)="init()" (slideChangeTransitionEnd)="slideChangeTransitionEnd()">
+                <div class="swiper-wrapper">
+                    <div class="Car Car--niva swiper-slide" data-hash="slide1">
+                        <perfect-scrollbar class="scrollable scroll-container" style="max-height:calc(100vh - 50px);overflow: hidden;" fxFlex="auto"
+                            [config]="config" [scrollIndicators]="true">
+                            <div class="container m-t-0 p-t-10 m-b-30">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h1 class="Car-name" data-swiper-parallax="-100">Riva
+                                            <small>&nbsp;(VAZ 2105)</small>
+                                        </h1>
+                                        <p class="Car-moto m-b-5" data-swiper-parallax="-200">to have all these features.</p>
+                                        <a class="Car-link m-b-5" data-swiper-parallax="-250" href="https://en.wikipedia.org/wiki/Lada_Riva" target="_blank">Read more &rarr;</a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="gallery-item first" data-swiper-parallax="-400">
+                                            <img src="assets/img/gallery/2.jpg" alt="" class="image-responsive-height">
+                                            <div class="overlayer bottom-left full-width">
+                                                <div class="overlayer-wrapper item-info ">
+                                                    <div class="gradient-grey p-l-20 p-r-20 p-t-50 p-b-5">
+                                                        <div class="">
+                                                            <p class="pull-left bold text-white m-b-5 fs-14 p-t-10">Happy Ninja</p>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div class="m-t-20">
+                                                            <div class="thumbnail-wrapper d32 circular m-t-5">
+                                                                <img width="40" height="40" src="assets/img/profiles/avatar.jpg" alt="">
+                                                            </div>
+                                                            <div class="inline m-l-10">
+                                                                <p class="no-margin text-white fs-12">Designed by Alex Nester</p>
+                                                                <p class="rating">
+                                                                    <i class="fa fa-star rated"></i>
+                                                                    <i class="fa fa-star rated"></i>
+                                                                    <i class="fa fa-star rated"></i>
+                                                                    <i class="fa fa-star rated"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                </p>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="gallery-item first" data-swiper-parallax="-500">
+                                            <img src="assets/img/gallery/1.jpg" alt="" class="image-responsive-height">
+                                            <div class="overlayer bottom-left full-width">
+                                                <div class="overlayer-wrapper item-info ">
+                                                    <div class="gradient-grey p-l-20 p-r-20 p-t-50 p-b-5">
+                                                        <div class="">
+                                                            <p class="pull-left bold text-white m-b-5 fs-14 p-t-10">Happy Ninja</p>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div class="m-t-20">
+                                                            <div class="thumbnail-wrapper d32 circular m-t-5">
+                                                                <img width="40" height="40" src="assets/img/profiles/avatar.jpg" alt="">
+                                                            </div>
+                                                            <div class="inline m-l-10">
+                                                                <p class="no-margin text-white fs-12">Designed by Alex Nester</p>
+                                                                <p class="rating">
+                                                                    <i class="fa fa-star rated"></i>
+                                                                    <i class="fa fa-star rated"></i>
+                                                                    <i class="fa fa-star rated"></i>
+                                                                    <i class="fa fa-star rated"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                </p>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="gallery-item first" data-swiper-parallax="-500">
+                                            <img src="assets/img/gallery/4.jpg" alt="" class="image-responsive-height">
+                                            <div class="overlayer bottom-left full-width">
+                                                <div class="overlayer-wrapper item-info ">
+                                                    <div class="gradient-grey p-l-20 p-r-20 p-t-50 p-b-5">
+                                                        <div class="">
+                                                            <p class="pull-left bold text-white m-b-5 fs-14 p-t-10">Happy Ninja</p>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div class="m-t-20">
+                                                            <div class="thumbnail-wrapper d32 circular m-t-5">
+                                                                <img width="40" height="40" src="assets/img/profiles/avatar.jpg" alt="">
+                                                            </div>
+                                                            <div class="inline m-l-10">
+                                                                <p class="no-margin text-white fs-12">Designed by Alex Nester</p>
+                                                                <p class="rating">
+                                                                    <i class="fa fa-star rated"></i>
+                                                                    <i class="fa fa-star rated"></i>
+                                                                    <i class="fa fa-star rated"></i>
+                                                                    <i class="fa fa-star rated"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                </p>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </perfect-scrollbar>
+                        <div class="Car-decor one" data-swiper-parallax="-700"></div>
+                        <div class="Car-decor two" data-swiper-parallax="-600"></div>
+                        <div class="Car-decor three" data-swiper-parallax="-500"></div>
+                    </div>
+                    <div class="Car Car--niva swiper-slide" data-hash="slide2">
+                        <perfect-scrollbar class="scrollable scroll-container" style="max-height:calc(100vh - 50px);overflow: hidden;" fxFlex="auto"
+                            [config]="config" [scrollIndicators]="true">
+                            <div class="container m-t-0 p-t-10">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h1 class="Car-name" data-swiper-parallax="-100">Riva
+                                            <small>&nbsp;(VAZ 2105)</small>
+                                        </h1>
+                                        <p class="Car-moto m-b-5" data-swiper-parallax="-200">to have all these features.</p>
+                                        <a class="Car-link m-b-5" data-swiper-parallax="-250" href="https://en.wikipedia.org/wiki/Lada_Riva" target="_blank">Read more &rarr;</a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div (click)="toggleoverlayswiper()" class="gallery-item first" data-swiper-parallax="-400">
+                                            <img src="assets/img/gallery/5.jpg" alt="" class="image-responsive-height">
+                                            <div class="overlayer bottom-left full-width">
+                                                <div class="overlayer-wrapper item-info ">
+                                                    <div class="gradient-grey p-l-20 p-r-20 p-t-50 p-b-5">
+                                                        <div class="">
+                                                            <p class="pull-left bold text-white m-b-5 fs-14 p-t-10">Happy Ninja</p>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div class="m-t-20">
+                                                            <div class="thumbnail-wrapper d32 circular m-t-5">
+                                                                <img width="40" height="40" src="assets/img/profiles/avatar.jpg" alt="">
+                                                            </div>
+                                                            <div class="inline m-l-10">
+                                                                <p class="no-margin text-white fs-12">Designed by Alex Nester</p>
+                                                                <p class="rating">
+                                                                    <i class="fa fa-star rated"></i>
+                                                                    <i class="fa fa-star rated"></i>
+                                                                    <i class="fa fa-star rated"></i>
+                                                                    <i class="fa fa-star rated"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                </p>
+                                                            </div>
+                                                            <div class="pull-right m-t-10">
+                                                                <button class="btn btn-white btn-xs btn-mini bold fs-14" type="button">+</button>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="gallery-item first" data-swiper-parallax="-500">
+                                            <img src="assets/img/gallery/6.jpg" alt="" class="image-responsive-height">
+                                            <div class="overlayer bottom-left full-width">
+                                                <div class="overlayer-wrapper item-info ">
+                                                    <div class="gradient-grey p-l-20 p-r-20 p-t-50 p-b-5">
+                                                        <div class="">
+                                                            <p class="pull-left bold text-white m-b-5 fs-14 p-t-10">Happy Ninja</p>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div class="m-t-20">
+                                                            <div class="thumbnail-wrapper d32 circular m-t-5">
+                                                                <img width="40" height="40" src="assets/img/profiles/avatar.jpg" data-src="assets/img/profiles/avatar.jpg" data-src-retina="assets/img/profiles/avatar2x.jpg"
+                                                                    alt="">
+                                                            </div>
+                                                            <div class="inline m-l-10">
+                                                                <p class="no-margin text-white fs-12">Designed by Alex Nester</p>
+                                                                <p class="rating">
+                                                                    <i class="fa fa-star rated"></i>
+                                                                    <i class="fa fa-star rated"></i>
+                                                                    <i class="fa fa-star rated"></i>
+                                                                    <i class="fa fa-star rated"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                </p>
+                                                            </div>
+                                                            <div class="pull-right m-t-10">
+                                                                <button class="btn btn-white btn-xs btn-mini bold fs-14" type="button">+</button>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="gallery-item first" data-swiper-parallax="-500">
+                                            <img src="assets/img/gallery/7.jpg" alt="" class="image-responsive-height">
+                                            <div class="overlayer bottom-left full-width">
+                                                <div class="overlayer-wrapper item-info ">
+                                                    <div class="gradient-grey p-l-20 p-r-20 p-t-50 p-b-5">
+                                                        <div class="">
+                                                            <p class="pull-left bold text-white m-b-5 fs-14 p-t-10">Happy Ninja</p>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div class="m-t-20">
+                                                            <div class="thumbnail-wrapper d32 circular m-t-5">
+                                                                <img width="40" height="40" src="assets/img/profiles/avatar.jpg" alt="">
+                                                            </div>
+                                                            <div class="inline m-l-10">
+                                                                <p class="no-margin text-white fs-12">Designed by Alex Nester</p>
+                                                                <p class="rating">
+                                                                    <i class="fa fa-star rated"></i>
+                                                                    <i class="fa fa-star rated"></i>
+                                                                    <i class="fa fa-star rated"></i>
+                                                                    <i class="fa fa-star rated"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                </p>
+                                                            </div>
+                                                            <div class="pull-right m-t-10">
+                                                                <button class="btn btn-white btn-xs btn-mini bold fs-14" type="button">+</button>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </perfect-scrollbar>
+                        <div class="Car-decor one" data-swiper-parallax="-700"></div>
+                        <div class="Car-decor two" data-swiper-parallax="-600"></div>
+                        <div class="Car-decor three" data-swiper-parallax="-500"></div>
+                    </div>
+                </div>
+                <nav class="slidenav">
+                    <button class="slidenav__item slidenav__item--prev">Previous</button>
+                    <button class="slidenav__item slidenav__item--next">Next</button>
+                </nav>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="overlay-swiper">
+                    <a (click)="toggleoverlayswiper()" class="overlay-close pg-close" href="javascript:;"></a>
+                    <div id="player" data-plyr-provider="vimeo" data-plyr-embed-id="76979871"></div>
+            </div>    
+        </main>
+
+    </div>
+</section>

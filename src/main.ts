@@ -8,6 +8,7 @@ import { environment } from './environments/environment';
 import * as $ from 'jquery';
 // import * as Waypoint from '../node_modules/waypoints/src/waypoint.js';
 import * as Waypoint from 'waypoints';
+import * as Plyr from 'plyr';
 
 if (environment.production) {
   enableProdMode();
