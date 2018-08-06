@@ -121,7 +121,13 @@ export class PortfolioComponent implements OnInit {
   }
   toggleoverlayswiper(){
     // let swiper = this.mainSlider.swiper();
-    $('.overlay-swiper').toggleClass('show-overlay');
+    $('.overlay-swiper').addClass('show-overlay');
+    // this.player.stop();
+  }
+  closeoverlayswiper(){
+    // let swiper = this.mainSlider.swiper();
+    this.player.pause();
+    $('.overlay-swiper').removeClass('show-overlay');
     // this.player.stop();
   }
 }
