@@ -6,7 +6,8 @@ import {
   PerfectScrollbarConfigInterface,
   PerfectScrollbarComponent, PerfectScrollbarDirective
 } from 'ngx-perfect-scrollbar';
-import Plyr from 'Plyr';
+// import Plyr from 'Plyr';
+declare var Plyr:any ;
 import {
   SwiperComponent, SwiperDirective, SwiperConfigInterface,
   SwiperScrollbarInterface
