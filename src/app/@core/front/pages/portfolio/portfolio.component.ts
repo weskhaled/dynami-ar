@@ -59,7 +59,7 @@ export class PortfolioComponent implements OnInit {
   ngAfterViewInit() {
     let self = this;
     this.player.on('ready', event => {
-      console.log(event.detail.plyr);
+      // console.log(event.detail.plyr);
       });
     setTimeout(() => {
       // self.player = new Plyr('#player');

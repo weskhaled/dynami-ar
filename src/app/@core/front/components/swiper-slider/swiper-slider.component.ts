@@ -214,7 +214,6 @@ export class SwiperSlider implements OnInit {
       var position = $(self.container).position();
       $(window).scroll(function () {
         var scrollPercent = (targetHeight - (window.scrollY - position.top));
-        // console.log('scrollpercent: '+ scrollPercent);
         if ((scrollPercent >= 0) && (window.scrollY > (position.top - (targetHeight * 2)))) {
           (<any>$('swiper-slider .swiper-slide header .container-fluid')).css({
             'position': "relative",

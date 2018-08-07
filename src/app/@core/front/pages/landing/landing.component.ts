@@ -1,6 +1,4 @@
 import { Component, OnInit, OnDestroy, Inject, ViewChildren, QueryList, ElementRef, Renderer, ViewChild, Renderer2 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { MouseEvent } from '@agm/core';
 import { SeoService } from '../../../../@services/front/seo.services';
 import {
   PerfectScrollbarConfigInterface,
@@ -25,7 +23,7 @@ export class LandingComponent implements OnInit {
   lat: number = 36.860938;
   lng: number = 10.189896;
   clickedMarker(label: string, index: number) {
-    console.log(`clicked the marker: ${label || index}`)
+    // console.log(`clicked the marker: ${label || index}`)
   }
   markers: marker[] = [
 	  {
@@ -36,7 +34,6 @@ export class LandingComponent implements OnInit {
 	  }
   ]
   enabledmap:boolean = false;
-  deviceObjects = [{ name: 'test 111111111', value: '1' }, { name: 'test 22222222', value: '2' }, { name: 'test 33333333333', value: '3' }];
   constructor(private seo: SeoService, private renderer: Renderer2) {
   }
   ngOnInit() {
@@ -86,12 +83,12 @@ export class LandingComponent implements OnInit {
             onComplete: function () {
               setTimeout(function () {
                 $self.siblings('.show-after-typing').addClass('show');
-              }, 250);
+              }, 0);
             }
           });
         });
       });
-    }, 250);
+    }, 0);
 
   }
 

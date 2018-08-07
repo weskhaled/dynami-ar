@@ -80,7 +80,6 @@ export class AuthenticationService {
         };
         return this.http.get(ENV.URL_LOGOUT, httpToken).pipe(
             map((response: any) => {
-                console.log(response);
                 if (response) {
                     // clear token remove user from local storage to log user out
                     this.token = null;

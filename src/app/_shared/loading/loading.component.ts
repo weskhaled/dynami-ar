@@ -13,6 +13,5 @@ export class LoadingComponent implements OnInit {
   ngOnInit() {
   }
   ngAfterViewInit() {
-    console.log('test after ngViewInit');
   }
 }

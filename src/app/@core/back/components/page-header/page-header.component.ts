@@ -34,7 +34,6 @@ export class PageHeader implements OnInit {
         if (result === true) {
           this.router.navigate(['auth/login']);
         } else {
-          console.log(false);
           this.router.navigate(['auth/login']);
         }
       });

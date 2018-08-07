@@ -30,7 +30,7 @@
   .tooltip-content {
     position: absolute;
     z-index: 9999;
-    width: 200px;
+    width: 160px;
     left: 50%;
     bottom: 100%;
     font-size: 20px;
@@ -40,7 +40,7 @@
     color: #fffaf0;
     background: transparent;
     opacity: 0;
-    margin: 0 0 10px -100px;
+    margin: 0 0 10px -80px;
     cursor: default;
     pointer-events: none;
     -webkit-font-smoothing: antialiased;
@@ -61,7 +61,7 @@
   }
   
   .tooltip-text {
-    border-bottom: 5px solid #fffaf0;
+    border-bottom: 2px solid #fffaf0;
     overflow: hidden;
     -webkit-transform: scale3d(0, 1, 1);
     transform: scale3d(0, 1, 1);
@@ -543,7 +543,7 @@
   nav.nav-slit .icon-wrap {
     position: relative;
     display: block;
-    padding: 40px 0px;
+    padding: 25px 0px;
   }
   
   nav.nav-slit i.icon {
@@ -555,7 +555,7 @@
   nav.nav-slit div {
     position: absolute;
     top: 0;
-    width: 200px;
+    width: 160px;
     height: 100%;
     background-color: #939a9f;
     -webkit-transition: -webkit-transform 0.3s 0.3s;
@@ -596,7 +596,7 @@
     letter-spacing: 1px;
     font-weight: 600;
     font-size: 12px;
-    line-height: 40px;
+    line-height: 30px;
     -webkit-transition: -webkit-transform 0.3s;
     -o-transition: -o-transform 0.3s;
     transition: transform 0.3s;

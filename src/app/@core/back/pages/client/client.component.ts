@@ -66,7 +66,6 @@ export class ClientComponent implements AfterViewInit, OnInit {
   }
 
   addnew() {
-    // console.log('add new client test');
     const dialogaddclientRef = this.dialogaddclient.open(AddClientDialog, {
       minWidth: '40%',
       width: '60%',

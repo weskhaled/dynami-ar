@@ -25,10 +25,8 @@ export class DashboardComponent implements OnInit {
     })
   }
   ngAfterViewInit() {
-    console.log('test after ngViewInit');
   }
   onChange(deviceValue) {
-    console.log(deviceValue);
   }
   addone(){
     this.deviceObjects.push({name:' test 4444', value: '4'});

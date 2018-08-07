@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
     this.authenticationService.logout();
   }
   ngAfterViewInit() {
-    console.log('test after ngViewInit');
   }
   model: any = {};
   loading = false;
