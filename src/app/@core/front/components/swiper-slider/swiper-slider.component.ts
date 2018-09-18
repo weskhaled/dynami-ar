@@ -50,11 +50,11 @@ export class SwiperSlider implements OnInit {
       content: `
       <!-- Section Content -->
       <div class="">
-          <div class="container-wide" data-local-scroll>
+          <div class="container">
               <div class="row align-items-center">
                   <div class="col-xl-7 col-10">
                       <h1 class="mb-0 text-left text-white">
-                          <span class="typing">Hi! I’m
+                          <span class="typing1">Hi! I’m
                               <strong>Khaled Weslati</strong> - experienced Front-End Developer from Tunisia</span>
                       </h1>
                   </div>
@@ -75,54 +75,7 @@ export class SwiperSlider implements OnInit {
       background_image: '/assets/img/photos/developer/home-4.jpg',
       data_title: '3/3',
       data_animate: 'fadeInRight',
-      content: `
-      <div class="container-wide" data-local-scroll>
-      <div class="row align-items-center">
-          <div class="col-md-8 offset-md-2">
-              <div class="windowscreen">
-              <div class="screen">
-                  <!--<div class="left-bar"></div>-->
-                  <div class="top-bar">
-                      <ul class="nav nav-tabs">
-                          <li class="title active">
-                              <a href="#screen_1" onclick="return false;" data-toggle="tab" aria-expanded="true">main.css</a>
-                              <span data-close="screen_1" class="close">
-                                  <span class="feathericon feathericon-cross"></span>
-                              </span>
-                          </li>
-                      </ul>
-                      <div class="buttons"></div>
-                  </div>
-                  <div class="clearfix">
-                      <!-- tab content -->
-                      <div class="tab-content">
-                          <!-- tab -->
-                          <div class="tab-pane active" id="screen_1">
-                              <div class="line-numbers-rows">
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                                  <span></span>
-                              </div>
-                              <code><span class="comment">//We are Creative ;)</span>
-          <span class="color-blue">.title.active</span>&gt;<span class="color-blue">.a</span>{
-            <span class="color-green">opacity</span>: <span class="color-orange">1</span>;
-            <span class="color-green">pointer-events</span>: <span class="color-orange">none</span>;
-          }<span class="cursor"></span>
-                            </code>
-                          </div>
-                          <!-- end tab -->
-                      </div>
-                  </div>
-              </div>
-          </div>
-        </div>
-      </div>
-    </div>   
-      `
+      content: ``
     }
   ];
   public configindex: SwiperConfigInterface = {

@@ -1,20 +1,63 @@
-<!-- Navigation -->
-<nav id="navigation" class="navigation-panel dark" [class.show]="sidebaropen">
-
-    <div class="navigation-inner">
-        <!-- Navigation Primary -->
-        <ul class="nav nav-primary-panel">
-            <li class="nav-item"><a data-href="#start" href="javascript:void(0)" [ngx-scroll-to]="'#start'" class="nav-link">Start</a></li>
-            <li class="nav-item"><a data-href="#resume" href="javascript:void(0)" [ngx-scroll-to]="'#resume'" class="nav-link">Resume</a></li>
-            <li class="nav-item"><a data-href="#portfolio" href="javascript:void(0)" [ngx-scroll-to]="'#portfolio'" class="nav-link">Portfolio</a></li>
-            <li class="nav-item"><a data-href="#contact" href="javascript:void(0)" [ngx-scroll-to]="'#contact'" class="nav-link">Contact</a></li>
-            <li class="nav-item" *ngIf="!islogedin"><a routerLink="/auth/login" class="nav-link">Login</a></li>
-            <li class="nav-item" *ngIf="islogedin"><a routerLink="/admin/" class="nav-link">admin</a></li>
-        </ul>
+<!-- header -->
+<header class="default-header fixed-top">
+    <div class="subnav">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="text-right">
+                        <div class="subnavinfo row justify-content-end">
+                            <div class="col">
+                                <span class=""><i class="fa fa-phone"></i> +216 24 838 161 </span>
+                                <span class=""><i class="fa fa-envelope"></i> contact@dynamix-it.be</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    
-</nav>
-<!-- Navigation / End -->
-
-<!-- Navigation Toggle -->
-<a id="navigation-toggle" (click)="togglesidebarOpen($event)" class="nav-toggle"  [class.open]="sidebaropen"><span></span><span></span><span></span><span></span></a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="/assets/img/logo.png" width="150" height="35" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="our-services.html">Our services
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">Why choose us</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="candidates.html">Candidates</a>
+                            <div role="separator" class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="partners-2.html">Partners</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="opportunities.html">Careers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact us</a>
+                    </li>
+                    <li class="nav-item">
+                            <button type="button" class="btn btn-outline-dark btn-sm">Submit CV</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target=".bs-example-modal-lg">Recommend
+                            a friend</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
