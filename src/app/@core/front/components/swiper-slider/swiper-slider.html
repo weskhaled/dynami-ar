@@ -34,8 +34,13 @@
         <div class="pattern back-35-g"></div>
         <div class="header-image" [ngStyle]="{'background-image': 'url(' + varticle.background_image + ')'}"></div>
 
-        <div class="container">
-          <div class="" [attr.data-animate]="varticle.data_animate"  [innerHTML]="varticle.content"></div>
+        <div class="container" data-swiper-parallax-x="-30%">
+          <div class="rows" [attr.data-animate]="varticle.data_animate"  [innerHTML]="varticle.content"></div>
+          <div class="btns">
+            <button *ngFor="let btn of varticle.btns; let i = index" [ngClass]="btn.classes" [attr.href]="btn.href" data-animate="fadeInLeft"
+            data-toggle="modal" data-target="#exampleModal">
+            {{btn.title}}</button>
+          </div>
         </div>
       </header>
     </article>

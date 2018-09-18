@@ -1,106 +1,126 @@
 /* 6.7 Cards
 ----------------------------------------- */
 
-.card {
-    border: none;
-    margin-bottom: 1.75rem;
-    @include transition-secondary;
-    @include box-shadow(1px 1px 30px 0 rgba(#000,0.04)); d
-
-    p {
-        margin-bottom: 1.25rem;
-    }
-}
-
-.card-header,
-.card-footer {
-    padding: 1.5rem 1.75rem;
-	background-color: transparent;
-}
-
-.card-subtitle {
-    margin-top: -0.5rem;
-}
-
-.card-block {
-    padding: 1.75rem 1.75rem;
-
-    &:first-child {
-        .icon-circle {
-            margin-top: -30px;
-        }
-    }
-}
-
-.card-link {
-    font-weight: $font-primary-medium;
-    font-size: 0.9rem;
-    color: inherit;
-
-    &:after {
-        margin-left: 0.7rem;
-        content: "\f105";
-        font-family: FontAwesome;
-        @include opacity(0.5);
-        @include transition-primary;
-        display: inline-block;
-    }
-
-    &:hover, &:focus {
-        color: inherit;
-        &:after {
-            @include translateX(4px);
-            @include opacity(1);
-            color: $color-primary;
-        }
-    }
-}
-
-.card-nav {
-    list-style: none;
-    padding: 0;
+/*fliped cart*/
+.flipWrapper {
+    -webkit-perspective: 600px;
+    perspective: 600px;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 25px;
+   }
+   .flipWrapper .card {
+    width: 100%;
+    height: auto;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: 0.35s;
+    -o-transition: 0.35s;
+    transition: 0.35s;
+    margin: 0 auto;
+    border: 0;
+   }
+   .flipWrapper .card .face {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    z-index: 2;
+   }
+   .flipWrapper .card .face.front {
+    z-index: 1;
+    color: #FFF;
+   }
+   .flipWrapper .card .face.back {
+    position: absolute;
+    top: 0;
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+   }
+   .flipWrapper .card .face figure {
     margin: 0;
-    font-size: 0.9rem;
-    font-weight: $font-primary-medium;
-    @include pie-clearfix;
-
-    > li {
-        width: 50%;
-        float: left;
-        overflow: hidden;
-        display: block;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        margin-bottom: 0.4rem;
-
-        &:before {
-            margin-right: 0.7rem;
-            content: "\f105";
-            font-family: FontAwesome;
-            @include opacity(0.5);
-        }
-
-        > a {
-            &:hover, &:focus {
-                color: $color-primary;
-            }
-        }
-    }
-}
-
-.card-icon,
-.card-icon-top,
-.card-icon-bottom {
-    padding: 50px 0;
-    font-size: 56px;
+    position: relative;
+    height: 290px;
+    max-height: 400px;
+   }
+   .flipWrapper .card .face figure img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    display: block;
+    position: relative;
+    z-index: 1;
+    -webkit-transition: -webkit-transform 0.2s;
+    -o-transition: -o-transform 0.2s;
+    transition: transform 0.2s;
+    border: 5px solid #f7f7f7;
+    background-color: #fff;
+   }
+   .flipWrapper .card .face figure figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 4px;
+    /*background: #191B1F;*/
+    color: #333;
+    width: 100%;
+    height: 100%;
     text-align: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+   }
+   .flipWrapper .card .face figure figcaption .social {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+   }
+   .flipWrapper .flip-read-more {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    right: 0;
+    font-size: 15px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 0;
+    padding-left: 20px;
     color: #fff;
-}
-
-.card-icon-top {
-    @include border-radius(3px 3px 0 0);
-}
-
-.card-icon-bottom {
-    @include border-radius(0 0 3px 3px);
-}
+    z-index: 2;
+    transform: translate3d(100%, -100%, 0);
+    transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 1);
+   }
+   .flipWrapper .flip-read-more:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 0px solid transparent;
+    border-top: 50px solid #6a5488;
+   }
+   .flipWrapper .card:hover figure img {
+    transform: scale(0.4);
+   }
+   .flipWrapper .card:hover .flip-read-more {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+   }
+   .flipWrapper .card.flipped {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+   }
+   

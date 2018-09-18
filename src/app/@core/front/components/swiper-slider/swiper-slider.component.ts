@@ -26,15 +26,20 @@ export class SwiperSlider implements OnInit {
   progresswidthdelay: number = 0;
   articles = [
     {
-      data_thumb_url: '/assets/img/photos/developer/home-3-thumb.jpg',
-      background_image: '/assets/img/photos/developer/home-3.jpg',
+      data_thumb_url: '/assets/img/slider-img/slide-1.jpg',
+      background_image: '/assets/img/slider-img/slide-1.jpg',
       data_title: '1/3',
       data_animate: 'fadeInUp',
+      btns:[{
+        href: 'www.test.com',
+        title: 'Our Services',
+        classes: 'btn btn-primary btn-sm'
+      }],
       content: `
       <!-- Section Content -->
       <div class="row">
       <div class="col-sm-12">
-          <h4 class="big animated1 text-center" data-animate="fadeInDown"><span class="logo-text color-white"><span
+          <h4 class="big animated1 text-center" data-animate="fadeInDown"><span class="logo-text text-white"><span
                       class="light">DYNA</span>MIX</span>
           </h4>
       </div>
@@ -43,12 +48,12 @@ export class SwiperSlider implements OnInit {
   <div class="row">
       <div class="col-sm-8">
           <div class="label-15px back-35 animated1" data-animate="fadeInUp">
-              <h3 class="color-white text-uppercase">
+              <h3 class="text-white text-uppercase">
                   Building Technology Smarter
               </h3>
           </div>
           <div class="space30px"></div>
-          <p class="color-white text-left animated1 fast" data-animate="fadeInLeft">
+          <p class="text-white text-left animated1 fast" data-animate="fadeInLeft">
               How can Dynamix s.a help your business? from rigorously selecting the best
               Java / J2ee developers, from Tunisia, India and
               Morocco. Dynamix delivers the right talent, so our clients can deliver
@@ -58,9 +63,6 @@ export class SwiperSlider implements OnInit {
               business to new levels of interaction and management
           </p>
           <div class="space15px"></div>
-          <button type="button" class="btn btn-primary btn-sm animated1" data-animate="fadeInLeft"
-              data-toggle="modal" data-target="#exampleModal">
-              Our Services</button>
       </div>
       <div class="col-sm-4">
           <div class="text-center animated1" data-animate="fadeInRight">
@@ -76,12 +78,17 @@ export class SwiperSlider implements OnInit {
       data_thumb_url: '/assets/img/photos/developer/home-1-thumb.jpg',
       background_image: '/assets/img/photos/developer/home-1.jpg',
       data_title: '2/3',
-      data_animate: 'fadeInRight',
+      data_animate: 'fadeInRight',      
+      btns:[{
+        href: 'www.test.com',
+        title: 'test btn',
+        classes: 'btn btn-danger btn-sm'
+      }],
       content: `
       <!-- Section Content -->
       <div class="row">
       <div class="col-sm-12">
-          <h4 class="big animated1 text-center" data-animate="fadeInDown"><span class="logo-text color-white"><span
+          <h4 class="big animated1 text-center" data-animate="fadeInDown"><span class="logo-text text-white"><span
                       class="light">DYNA</span>MIX</span>
           </h4>
       </div>
@@ -90,12 +97,12 @@ export class SwiperSlider implements OnInit {
   <div class="row">
       <div class="col-sm-8">
           <div class="label-15px back-35 animated1" data-animate="fadeInUp">
-              <h3 class="color-white text-uppercase">
+              <h3 class="text-white text-uppercase">
                   Building Technology Smarter
               </h3>
           </div>
           <div class="space30px"></div>
-          <p class="color-white text-left animated1 fast" data-animate="fadeInLeft">
+          <p class="text-white text-left animated1 fast" data-animate="fadeInLeft">
               How can Dynamix s.a help your business? from rigorously selecting the best
               Java / J2ee developers, from Tunisia, India and
               Morocco. Dynamix delivers the right talent, so our clients can deliver
@@ -105,9 +112,6 @@ export class SwiperSlider implements OnInit {
               business to new levels of interaction and management
           </p>
           <div class="space15px"></div>
-          <button type="button" class="btn btn-primary btn-sm animated1" data-animate="fadeInLeft"
-              data-toggle="modal" data-target="#exampleModal">
-              Our Services</button>
       </div>
       <div class="col-sm-4">
           <div class="text-center animated1" data-animate="fadeInRight">
@@ -124,6 +128,7 @@ export class SwiperSlider implements OnInit {
       background_image: '/assets/img/photos/developer/home-4.jpg',
       data_title: '3/3',
       data_animate: 'fadeInRight',
+      btns:[],
       content: ``
     }
   ];
@@ -136,7 +141,7 @@ export class SwiperSlider implements OnInit {
     keyboard: true,
     mousewheel: false,
     scrollbar: false,
-    parallax: false,
+    parallax: true,
     effect: "slide",
     pagination: {
       el: '.swiper-pagination',

@@ -167,24 +167,6 @@ a {
    6) Colors
    */
    
-   .color-white{
-    color: white!important;
-   }
-   .color-blue{
-    color: #00aaff!important;
-   }
-   .color-black{
-    color: #000!important;
-   }
-   .color-red{
-    color: #ff0000!important;
-   }
-   .color-orange{
-    color: #F36E5F!important;
-   }
-   .color-green{
-    color: #5EC3AF!important;
-   }
    
    /*
    7) Backgrounds & patterns
@@ -288,14 +270,6 @@ a {
         background-repeat: repeat;
         background-attachment: fixed;
         background-color: #6a5488!important;
-}
-   
-
-.container-inner {
-    padding-top: 45px;
-    padding-bottom: 50px;
-    position: relative;
-    z-index: 3;
 }
 
   
@@ -563,51 +537,7 @@ a {
   z-index: 100;
   background-color: white;
 }
-/*
-17) footer
-*/
-.page-content > footer > .footer-container {
-    background-color: #6b5488;
-    color: white;
-    position: relative;
-    z-index: 1;
-  }
-  .page-content > footer > .footer-container h5 {
-    font-size: 14px;
-    font-weight: 600;
-    margin: 10px 0 25px 0;
-  }
-  .page-content > footer > .footer-container .recent-posts .media-heading {
-    font-size: 15px;
-    color: white;
-  }
-  .page-content > footer p {
-    color: #fff;
-  }
-  .page-content > footer .copyrights {
-    background-color: #3c304c;
-  }
-  .page-content > footer .copyrights p {
-    margin: 0;
-    padding: 20px 0;
-  }
-  .page-content > footer .copyrights .social-icon {
-    color: #fff;
-  }
-  
-  @media (min-width: 768px) {
-    .page-content > footer .copyrights {
-      position: fixed;
-      left: 0;
-      width: 100%;
-      bottom: 0;
-      z-index: 0;
-    }
-  
-    .page-content > footer > .footer-container {
-      margin-bottom: 60px;
-    }
-  }
+
   
 
 
@@ -658,7 +588,7 @@ a {
     line-height: 0;
    }
    .social-icons{
-    margin-top: 12px;
+    margin-top: 15px;
    }
    .social-icon {
     border: 2px solid;
@@ -843,182 +773,6 @@ a {
     {
       margin: 0
     }
-
-
-
-
-/*fliped cart*/
-.flipWrapper {
-  -webkit-perspective: 600px;
-  perspective: 600px;
-  width: 100%;
-  height: 100%;
-  max-height: 100%;
-  position: relative;
-  margin: 0 auto;
-  margin-bottom: 25px;
- }
- .flipWrapper .card {
-  width: 100%;
-  height: auto;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-transition: 0.35s;
-  -o-transition: 0.35s;
-  transition: 0.35s;
-  margin: 0 auto;
-  border: 0;
- }
- .flipWrapper .card .face {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  margin: 0 auto;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  z-index: 2;
- }
- .flipWrapper .card .face.front {
-  z-index: 1;
-  color: #FFF;
- }
- .flipWrapper .card .face.back {
-  position: absolute;
-  top: 0;
-  -webkit-transform: rotateY(-180deg);
-  transform: rotateY(-180deg);
-  width: 100%;
-  height: 100%;
-  padding: 5px;
- }
- .flipWrapper .card .face figure {
-  margin: 0;
-  position: relative;
-  height: 290px;
-  max-height: 400px;
- }
- .flipWrapper .card .face figure img {
-  width: 100%;
-  max-width: 100%;
-  height: 100%;
-  max-height: 100%;
-  display: block;
-  position: relative;
-  z-index: 1;
-  -webkit-transition: -webkit-transform 0.2s;
-  -o-transition: -o-transform 0.2s;
-  transition: transform 0.2s;
-  border: 5px solid #f7f7f7;
-  background-color: #fff;
- }
- .flipWrapper .card .face figure figcaption {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 4px;
-  /*background: #191B1F;*/
-  color: #333;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
- }
- .flipWrapper .card .face figure figcaption .social {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
- }
- .flipWrapper .flip-read-more {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  top: 0;
-  right: 0;
-  font-size: 15px;
-  text-align: center;
-  padding-top: 5px;
-  padding-bottom: 0;
-  padding-left: 20px;
-  color: #fff;
-  z-index: 2;
-  transform: translate3d(100%, -100%, 0);
-  transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 1);
- }
- .flipWrapper .flip-read-more:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-left: 50px solid transparent;
-  border-right: 0px solid transparent;
-  border-top: 50px solid #6a5488;
- }
- .flipWrapper .card:hover figure img {
-  transform: scale(0.4);
- }
- .flipWrapper .card:hover .flip-read-more {
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
- }
- .flipWrapper .card.flipped {
-  -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg);
- }
- 
-   /*
-   * Hide visually and from screen readers:
-   * http://juicystudio.com/article/screen-readers-display-none.php
-   */
-   
-   .hidden {
-    display: none !important;
-    visibility: hidden;
-   }
-   
-   /*
-   * Hide only visually, but have it available for screen readers:
-   * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
-   */
-   
-   .visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-   }
-   
-   /*
-   * Extends the .visuallyhidden class to allow the element
-   * to be focusable when navigated to via the keyboard:
-   * https://www.drupal.org/node/897638
-   */
-   
-   .visuallyhidden.focusable:active,
-   .visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-   }
-   
-   /*
-   * Hide visually and from screen readers, but maintain layout
-   */
-   
-   .invisible {
-    visibility: hidden;
-   }
    
    
    
