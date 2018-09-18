@@ -12,35 +12,18 @@ import {
 @Component({
   selector: 'swiper-slider',
   templateUrl: './swiper-slider.html',
-//   template: `
-//   <div class="swiper-container" [swiper]="configindex">
-//   <div class="swiper-wrapper">
-//     <div *ngFor="let slide of articles" class="swiper-slide">
-//       <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
-//         {{slide}}
-//       </div>
-//     </div>
-//   </div>
-
-//   <div class="swiper-scrollbar" [hidden]="config.scrollbar === false"></div>
-//   <div class="swiper-pagination" [hidden]="config.pagination === false"></div>
-
-//   <div class="swiper-button-prev" [hidden]="config.navigation === false"></div>
-//   <div class="swiper-button-next" [hidden]="config.navigation === false"></div>
-// </div>
-//   `,
   styleUrls: ['./style.scss']
 })
-export class SwiperSlider implements OnInit {  
+export class SwiperSlider implements OnInit {
   public config: PerfectScrollbarConfigInterface = {};
   id: number;
   container = '#fullscreen-slider';
-  index:number = 0;
-  nextslide:any='';
-  prevslide:any='';
-  autoplaydelay:number=20000;
-  progresswidth:number=0;
-  progresswidthdelay:number=0;
+  index: number = 0;
+  nextslide: any = '';
+  prevslide: any = '';
+  autoplaydelay: number = 50000;
+  progresswidth: number = 0;
+  progresswidthdelay: number = 0;
   articles = [
     {
       data_thumb_url: '/assets/img/photos/developer/home-3-thumb.jpg',
@@ -49,18 +32,44 @@ export class SwiperSlider implements OnInit {
       data_animate: 'fadeInUp',
       content: `
       <!-- Section Content -->
-      <div class="">
-          <div class="container">
-              <div class="row align-items-center">
-                  <div class="col-xl-7 col-10">
-                      <h1 class="mb-0 text-left text-white">
-                          <span class="typing1">Hi! I’m
-                              <strong>Khaled Weslati</strong> - experienced Front-End Developer from Tunisia</span>
-                      </h1>
-                  </div>
-              </div>
+      <div class="row">
+      <div class="col-sm-12">
+          <h4 class="big animated1 text-center" data-animate="fadeInDown"><span class="logo-text color-white"><span
+                      class="light">DYNA</span>MIX</span>
+          </h4>
+      </div>
+  </div>
+  <div class="space30px"></div>
+  <div class="row">
+      <div class="col-sm-8">
+          <div class="label-15px back-35 animated1" data-animate="fadeInUp">
+              <h3 class="color-white text-uppercase">
+                  Building Technology Smarter
+              </h3>
           </div>
-      </div>      
+          <div class="space30px"></div>
+          <p class="color-white text-left animated1 fast" data-animate="fadeInLeft">
+              How can Dynamix s.a help your business? from rigorously selecting the best
+              Java / J2ee developers, from Tunisia, India and
+              Morocco. Dynamix delivers the right talent, so our clients can deliver
+              their
+              projects on time and on budget and our java development services will take
+              your
+              business to new levels of interaction and management
+          </p>
+          <div class="space15px"></div>
+          <button type="button" class="btn btn-primary btn-sm animated1" data-animate="fadeInLeft"
+              data-toggle="modal" data-target="#exampleModal">
+              Our Services</button>
+      </div>
+      <div class="col-sm-4">
+          <div class="text-center animated1" data-animate="fadeInRight">
+              <span class="slider-icon">
+                  <i class="icon-genius"></i>
+              </span>
+          </div>
+      </div>
+  </div>      
       `
     },
     {
@@ -68,7 +77,47 @@ export class SwiperSlider implements OnInit {
       background_image: '/assets/img/photos/developer/home-1.jpg',
       data_title: '2/3',
       data_animate: 'fadeInRight',
-      content: ``
+      content: `
+      <!-- Section Content -->
+      <div class="row">
+      <div class="col-sm-12">
+          <h4 class="big animated1 text-center" data-animate="fadeInDown"><span class="logo-text color-white"><span
+                      class="light">DYNA</span>MIX</span>
+          </h4>
+      </div>
+  </div>
+  <div class="space30px"></div>
+  <div class="row">
+      <div class="col-sm-8">
+          <div class="label-15px back-35 animated1" data-animate="fadeInUp">
+              <h3 class="color-white text-uppercase">
+                  Building Technology Smarter
+              </h3>
+          </div>
+          <div class="space30px"></div>
+          <p class="color-white text-left animated1 fast" data-animate="fadeInLeft">
+              How can Dynamix s.a help your business? from rigorously selecting the best
+              Java / J2ee developers, from Tunisia, India and
+              Morocco. Dynamix delivers the right talent, so our clients can deliver
+              their
+              projects on time and on budget and our java development services will take
+              your
+              business to new levels of interaction and management
+          </p>
+          <div class="space15px"></div>
+          <button type="button" class="btn btn-primary btn-sm animated1" data-animate="fadeInLeft"
+              data-toggle="modal" data-target="#exampleModal">
+              Our Services</button>
+      </div>
+      <div class="col-sm-4">
+          <div class="text-center animated1" data-animate="fadeInRight">
+              <span class="slider-icon">
+                  <i class="icon-genius"></i>
+              </span>
+          </div>
+      </div>
+  </div>
+      `
     },
     {
       data_thumb_url: '/assets/img/photos/developer/home-4-thumb.jpg',
@@ -91,98 +140,98 @@ export class SwiperSlider implements OnInit {
     effect: "slide",
     pagination: {
       el: '.swiper-pagination',
-      clickable:true,
+      clickable: true,
       type: 'bullets'
     },
-    autoplay:{
+    autoplay: {
       delay: this.autoplaydelay,
-      disableOnInteraction:false
+      disableOnInteraction: false
     }
   };
   @ViewChild('sliderindex') private indexswiper: SwiperDirective;
 
-    constructor(private renderer: Renderer2,private router: Router,private userService: UserService,private authenticationService: AuthenticationService) {
-      let self = this;
-      this.nextslide = this.articles[1];
-      this.prevslide = this.articles[this.articles.length -1];
-      // this.dataloaded = true;
-      setTimeout(() => {
-        this.indexswiper.init();
-      });
-    }
-    ngOnInit() {
-    }
+  constructor(private renderer: Renderer2, private router: Router, private userService: UserService, private authenticationService: AuthenticationService) {
+    let self = this;
+    this.nextslide = this.articles[1];
+    this.prevslide = this.articles[this.articles.length - 1];
+    // this.dataloaded = true;
+    setTimeout(() => {
+      this.indexswiper.init();
+    });
+  }
+  ngOnInit() {
+  }
 
-    slidechange() {
+  slidechange() {
+  }
+  public onIndexChange(index: number) {
+    if (index + 1 > this.articles.length - 1) {
+      this.nextslide = this.articles[0];
+    } else {
+      this.nextslide = this.articles[index + 1];
     }
-    public onIndexChange(index: number) {
-      if(index + 1 > this.articles.length -1 ){
-        this.nextslide = this.articles[0];
-      } else {
-        this.nextslide = this.articles[index+1];
-      }
-      if(index <= -0 ){
-        this.prevslide = this.articles[this.articles.length -1];
-      } else {
-        this.prevslide = this.articles[index-1];
-      }
+    if (index <= -0) {
+      this.prevslide = this.articles[this.articles.length - 1];
+    } else {
+      this.prevslide = this.articles[index - 1];
     }
-    goprevslide(){
-      if (this.index <= -0) {
-        this.indexswiper.setIndex(this.articles.length - 1);
-      } else {
-        this.indexswiper.prevSlide();
-      }
+  }
+  goprevslide() {
+    if (this.index <= -0) {
+      this.indexswiper.setIndex(this.articles.length - 1);
+    } else {
+      this.indexswiper.prevSlide();
     }
-    gonextslide(){
-      if (((this.index + 1) > (this.articles.length - 1))) {
-        this.indexswiper.setIndex(0);
-      } else {
-        this.indexswiper.nextSlide();
-      }
+  }
+  gonextslide() {
+    if (((this.index + 1) > (this.articles.length - 1))) {
+      this.indexswiper.setIndex(0);
+    } else {
+      this.indexswiper.nextSlide();
     }
-    endtransition(){
+  }
+  endtransition() {
+    this.progresswidth = 100;
+    this.progresswidthdelay = this.autoplaydelay;
+    // setTimeout(this.gonextslide(), this.progresswidthdelay);
+  }
+  starttransition() {
+    this.progresswidthdelay = 0.5;
+    this.progresswidth = 0;
+  }
+  mouseoverswiper(event) {
+    this.indexswiper.swiper().autoplay.stop();
+  }
+  mouseoutswiper(event) {
+    this.indexswiper.swiper().autoplay.start();
+  }
+  autoplayStartswiper() {
+  }
+  ngAfterViewInit() {
+    let self = this;
+    self.indexswiper.swiper().params.pagination.renderBullet = function (index, className) {
+      return '<span class="' + className + '"><span class="tooltip-content"><span class="tooltip-text"><span class="tooltip-inner"><img src="' + self.articles[index].data_thumb_url + '" class="img-responsive" style="width: 100%; height: 100%;"></span></span></span></span>';
+    }
+    var targetHeight = $(self.container).outerHeight();
+    var position = $(self.container).position();
+    $(window).scroll(function () {
+      var scrollPercent = (targetHeight - (window.scrollY - position.top));
+      if ((scrollPercent >= 0) && (window.scrollY > (position.top - (targetHeight * 2)))) {
+        (<any>$('swiper-slider .swiper-slide header .container')).css({
+          'position': "relative",
+          'top': 1 - (((scrollPercent - targetHeight) / 2)) + "px",
+          'opacity': (scrollPercent) / targetHeight
+        });
+        $('.swiper-slide header .header-image').css({
+          'background-position': "50% " + (((window.scrollY - position.top) * 0.3) - 25) + "px"
+        });
+      }
+    });
+  }
+  firstinit() {
+    setTimeout(() => {
       this.progresswidth = 100;
       this.progresswidthdelay = this.autoplaydelay;
-      // setTimeout(this.gonextslide(), this.progresswidthdelay);
-    }
-    starttransition(){
-      this.progresswidthdelay = 0.5;
-      this.progresswidth = 0;
-    }
-    mouseoverswiper(event){
-      this.indexswiper.swiper().autoplay.stop();
-    }
-    mouseoutswiper(event){
-      this.indexswiper.swiper().autoplay.start();
-    }
-    autoplayStartswiper(){
-    }
-    ngAfterViewInit() {
-      let self = this;
-      self.indexswiper.swiper().params.pagination.renderBullet = function (index, className) {
-        return '<span class="' + className + '"><span class="tooltip-content"><span class="tooltip-text"><span class="tooltip-inner"><img src="'+self.articles[index].data_thumb_url+'" class="img-responsive" style="width: 100%; height: 100%;"></span></span></span></span>';
-      }
-      var targetHeight = $(self.container).outerHeight();
-      var position = $(self.container).position();
-      $(window).scroll(function () {
-        var scrollPercent = (targetHeight - (window.scrollY - position.top));
-        if ((scrollPercent >= 0) && (window.scrollY > (position.top - (targetHeight * 2)))) {
-          (<any>$('swiper-slider .swiper-slide header .container-fluid')).css({
-            'position': "relative",
-            'top': 1 - (((scrollPercent - targetHeight) / 2)) + "px",
-            'opacity': (scrollPercent) / targetHeight
-          });
-          $('.swiper-slide header .header-image').css({
-            'background-position': "50% " + (((window.scrollY - position.top) * 0.3) - 25) + "px"
-          });
-        }
-      });
-    }
-    firstinit(){
-      setTimeout(() =>{
-        this.progresswidth = 100;
-        this.progresswidthdelay = this.autoplaydelay;
-      });
-    }
+    });
+  }
 }

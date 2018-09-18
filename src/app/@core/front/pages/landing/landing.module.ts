@@ -13,6 +13,7 @@ import { SwiperSlider } from '../../components/swiper-slider/swiper-slider.compo
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { AgmCoreModule } from '@agm/core';
 import { PageHeader } from '../../components/page-header/page-header.component';
+import { LoadingComponent } from '../../../../_shared/loading/loading.component';
 
 @NgModule({
   imports: [
@@ -38,7 +39,7 @@ import { PageHeader } from '../../components/page-header/page-header.component';
     CommonModule,
     routing
   ],
-  declarations: [LandingComponent,SwiperSlider,PageHeader],
+  declarations: [LandingComponent,LoadingComponent,SwiperSlider,PageHeader],
   providers: []
 })
 export class LandingModule {}
