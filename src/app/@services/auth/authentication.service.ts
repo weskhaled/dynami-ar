@@ -7,7 +7,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-
 @Injectable()
 export class AuthenticationService {
     public token: string;

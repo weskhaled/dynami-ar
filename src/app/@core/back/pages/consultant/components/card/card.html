@@ -1,0 +1,45 @@
+<div class="item" domflag>
+    <div class="mr-2">
+        <div class="item-image">
+            <div class="image-point" style="top:15px; left:20px;">
+                <div class="point bg-primary"><i class="pg-plus"></i></div>
+            </div>
+            <!-- point -->
+            <img src="{{consultant.photo}}" alt="profile card">
+            <div class="btns">
+                <div class="btn-group btn-group-justified btn-group-sm w-100">
+                    <div class="btn-group col-4 p-0">
+                        <button type="button" class="btn btn-success w-100">
+                            <span class="">
+                                <i class="fa fa-pencil fs-15"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="btn-group col-4 p-0">
+                        <button type="button" class="btn btn-success w-100">
+                            <span class="">
+                                <i class="fa fa-eye fs-15"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="btn-group col-4 p-0">
+                        <button type="button" class="btn btn-success w-100">
+                            <span class="">
+                                <i class="fa fa-trash-o fs-15"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="item-description">
+        <small> {{consultant.post}} </small>
+        <h3 class="description-title">{{consultant.name}}</h3>
+        <h5 class="text-uppercase mb-1">{{consultant.company}}</h5>
+        <div class="description-price" [attr.data-currency]="consultant.currency">{{consultant.price}}</div>
+        <div class=""><i class="fa fa-skype"></i> : <a href="{{consultant.skype}}">{{consultant.skype}}</a></div>
+        <div class=""><i class="fa fa-phone"></i> : <a href="{{consultant.phone}}">{{consultant.phone}}</a></div>
+        <div class=""><i class="pg-calender"></i> : {{consultant.wokrpermit}}</div>
+    </div>
+</div>

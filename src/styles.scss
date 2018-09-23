@@ -12,8 +12,23 @@
 @import '/app/@core/front/layouts/fonts/et-line-font.css';
 @import '/app/@core/front/layouts/fonts/feather-icons.css';
 @import '/app/@core/front/layouts/fonts/pages-icons.css';
+@import '/app/@core/back/layout/scss/pages.scss';
 @import '/app/@core/front/layouts/scss/theme-purple.scss';
 
+
+/* You can add global styles to this file, and also import other style files */
+.sidebar-visible nav.page-sidebar {
+ transform: translate(210px, 0px);
+}
+.page-sidebar:hover{
+ transform: translate(210px, 0px);
+ .sidebar-header .sidebar-header-controls {
+    transform: translate3d(85px, 0, 0);
+ }
+}
+.sidebar-open .page-sidebar{
+ display: block;
+}
 
 perfect-scrollbar>.ps.ps--scrolling-y>.ps__rail-y {
     background-color: transparent!important;
@@ -22,24 +37,49 @@ perfect-scrollbar>.ps.ps--scrolling-y>.ps__rail-y {
     z-index: 999;
     }
 perfect-scrollbar>.ps.ps--active-y>.ps__rail-y {
-width: 8px!important;
+ width: 8px!important;
 }
 .ps__thumb-y {
-width: 4px!important;
-border-radius: 0!important;
+ width: 4px!important;
+ border-radius: 0!important;
 }
 perfect-scrollbar>.ps.ps--active-y>.ps__rail-y:hover {
-width: 8px!important;
+ width: 8px!important;
 }
 .ps__rail-y:focus>.ps__thumb-y, .ps__rail-y:hover>.ps__thumb-y {
-background-color: #999;
-width: 4px!important;
+ background-color: #999;
+ width: 4px!important;
 }
 
+select {
+ -webkit-appearance: menulist!important;
+ border-radius: 0!important;
+ cursor: pointer;
+}
+.page-container .page-content-wrapper .content:only-child {
+    padding-bottom: 69px!important;
+}
 .mat-dialog-container{
 padding: 0!important;
 }
+// .modal .close {
+// margin: -10px -15px;
+// }
 .cdk-global-scrollblock {
     height: 100vh;
     overflow-y: visible;
+}
+
+/*logo text*/
+.logo-text {
+color: black;
+padding: 5px 15px;
+border: 2px solid;
+font-weight: 600;
+letter-spacing: 2px;
+display: inline-block;
+line-height: 21px;
+    .light {
+    font-weight: 200 !important;
+    }
 }

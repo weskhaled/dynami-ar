@@ -39,7 +39,7 @@ export class SwiperSlider implements OnInit {
       <!-- Section Content -->
       <div class="row">
       <div class="col-sm-12">
-          <h4 class="big animated1 text-center" data-animate="fadeInDown"><span class="logo-text text-white"><span
+          <h4 class="big animated1 text-center" data-animate="fadeInDown"><span class="text-white"><span
                       class="light">DYNA</span>MIX</span>
           </h4>
       </div>
@@ -88,7 +88,7 @@ export class SwiperSlider implements OnInit {
       <!-- Section Content -->
       <div class="row">
       <div class="col-sm-12">
-          <h4 class="big animated1 text-center" data-animate="fadeInDown"><span class="logo-text text-white"><span
+          <h4 class="big animated1 text-center" data-animate="fadeInDown"><span class="text-white"><span
                       class="light">DYNA</span>MIX</span>
           </h4>
       </div>
@@ -122,14 +122,6 @@ export class SwiperSlider implements OnInit {
       </div>
   </div>
       `
-    },
-    {
-      data_thumb_url: '/assets/img/photos/developer/home-4-thumb.jpg',
-      background_image: '/assets/img/photos/developer/home-4.jpg',
-      data_title: '3/3',
-      data_animate: 'fadeInRight',
-      btns:[],
-      content: ``
     }
   ];
   public configindex: SwiperConfigInterface = {

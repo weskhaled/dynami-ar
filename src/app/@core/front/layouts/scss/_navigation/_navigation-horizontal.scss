@@ -36,6 +36,7 @@
   }
   body .page-content header .navbar {
     color: #000;
+    border: 0;
     text-transform: uppercase;
     min-height: 40px;
     padding: 0;
@@ -66,3 +67,9 @@
     -moz-box-shadow: inset 0px 1px 0px 0px #6b5388;
     box-shadow: inset 0px 1px 0px 0px #6b5388;
   }
+
+@media (min-width: 768px){
+  front .navbar-collapse.collapse {
+    display: flex !important;
+  }
+}

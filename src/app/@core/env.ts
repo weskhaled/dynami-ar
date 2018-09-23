@@ -14,5 +14,7 @@ export class ENV {
     public static  URL_LOGOUT = V_API + 'logout';
     // client
     public static  URL_CLIENTS = V_API + 'clients';
+    // Consutlant
+    public static  URL_CONSULTANTS = V_API + 'consultants';
     public static  FB_APP_ID = '185939708652009';   
  }

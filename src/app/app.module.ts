@@ -33,7 +33,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     PerfectScrollbarModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule 
+    FormsModule,
   ],
   providers: [
     AuthGuard,
