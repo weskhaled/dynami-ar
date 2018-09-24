@@ -8,17 +8,22 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { UserCard } from './components/card/card.component';
 import { ConsultantService } from '../../../../@services/admin/consultant.service';
 import { AddConsultantDialog } from './components/dialog/dialog-add-consultant/dialog-add-consultant.component';
+import { ConfirmDialog } from './components/dialog/dialog-confirm/dialog-confirm.component';
+import { SharedModule } from '../../../../_shared/shared.module';
 
 @NgModule({
   imports: [
     PerfectScrollbarModule,
+    FormsModule,
     MaterialModule,
     CommonModule,
-    routing
+    routing,
+    SharedModule
   ],
-  declarations: [ConsultantComponent, UserCard,AddConsultantDialog],
+  declarations: [ConsultantComponent, UserCard,AddConsultantDialog,ConfirmDialog],
   entryComponents: [
-    AddConsultantDialog
+    AddConsultantDialog,
+    ConfirmDialog
   ],
   providers: [ConsultantService]
 })

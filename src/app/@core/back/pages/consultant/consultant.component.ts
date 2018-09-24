@@ -28,19 +28,20 @@ import { AddConsultantDialog } from "./components/dialog/dialog-add-consultant/d
 })
 export class ConsultantComponent implements OnInit {
   public config: PerfectScrollbarConfigInterface = {};
+  public loading = false;
   public consultants = [
-    {
-      name: "Hatem Smin",
-      photo:
-        "https://res.cloudinary.com/muhammederdem/image/upload/v1537638518/Ba%C5%9Fl%C4%B1ks%C4%B1z-1.jpg",
-      post: "Java developer ",
-      company: "Dynamix",
-      price: 4500,
-      currency: "Euro",
-      skype: "hsmin",
-      phone: "+216 33445554",
-      wokrpermit: "15/02/2018"
-    }
+    // {
+    //   name: "Hatem Smin",
+    //   photo:
+    //     "https://res.cloudinary.com/muhammederdem/image/upload/v1537638518/Ba%C5%9Fl%C4%B1ks%C4%B1z-1.jpg",
+    //   post: "Java developer ",
+    //   company: "Dynamix",
+    //   price: 4500,
+    //   currency: "Euro",
+    //   skype: "hsmin",
+    //   phone: "+216 33445554",
+    //   wokrpermit: "15/02/2018"
+    // }
   ];
   page = new Page();
   // MatPaginator Inputs
@@ -49,7 +50,8 @@ export class ConsultantComponent implements OnInit {
   pageIndex = 0;
   pageSizeOptions: number[] = [5, 10, 25, 100];
   // MatPaginator Output
-  pageEvent: PageEvent;
+  public pageEvent: PageEvent;
+  public searchq :string = '';
 
   constructor(
     private seo: SeoService,
@@ -72,29 +74,39 @@ export class ConsultantComponent implements OnInit {
     this.getConsultants({ pageSize: this.pageSize, pageIndex: this.pageIndex });
   }
   ngAfterViewInit() {}
-  getConsultants(pageInfo) {
+  getConsultants(pageInfo={ pageSize: this.pageEvent.pageSize, pageIndex: this.pageEvent.pageIndex }) {
     this.consultantService.getConsultants(pageInfo).subscribe(data => {
       // console.log(data);
       this.consultants = data.data;
       this.length = data.page.totalElements;
       this.pageIndex = data.page.pageNumber;
+      this.loading = true;
     });
   }
   onPaginateChange(event) {
-    console.log(event);
-    this.consultantService.getConsultants({ pageSize: event.pageSize, pageIndex: event.pageIndex }).subscribe(data => {
+    // console.log(event);
+    this.loading = false;
+    this.getConsultants({ pageSize: event.pageSize, pageIndex: event.pageIndex });
+  }
+  search() {
+    // console.log(event);
+    this.loading = false;
+    let q = { pageSize: -1, pageIndex: 0, search: this.searchq };
+    console.log(q);
+    this.consultantService.getConsultants(q).subscribe(data => {
       // console.log(data);
       this.consultants = data.data;
       this.length = data.page.totalElements;
       this.pageIndex = data.page.pageNumber;
+      this.loading = true;
     });
   }
   addnew() {
-    const dialogaddclientRef = this.dialogaddconsultant.open(AddConsultantDialog, {
+    const dialogaddconsultantRef = this.dialogaddconsultant.open(AddConsultantDialog, {
       minWidth: '40%',
       width: '60%',
     });
-    dialogaddclientRef.afterClosed().subscribe(result => {
+    dialogaddconsultantRef.afterClosed().subscribe(result => {
       if (result) {
         if (result.data == 'add') {
           this.snackBar.open('Add', 'success', {

@@ -20,6 +20,7 @@ import {
   MatNativeDateModule,
   MatDialogModule,
   MatPaginatorModule,
+  MatProgressBarModule
 
 } from '@angular/material';
 
@@ -43,7 +44,8 @@ import {
     MatDatepickerModule,
     MatNativeDateModule,
     MatDialogModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatProgressBarModule
   ],
   exports: [
     MatButtonModule,
@@ -64,7 +66,8 @@ import {
     MatDatepickerModule,
     MatNativeDateModule,
     MatDialogModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatProgressBarModule
   ]
 })
 export class MaterialModule {}

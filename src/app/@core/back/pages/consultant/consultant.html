@@ -28,25 +28,27 @@
           <div class="row mt-2 mb-2">
             <div class="col-md-6">
               <mat-form-field class="" style="width:100%">
-                <input matInput placeholder="Search Consultant" value="">
+                <input [(ngModel)]="searchq" matInput placeholder="Search Consultant" value="">
               </mat-form-field>
             </div>
             <div class="col-md-3">
-              <button mat-flat-button color="primary" class="btn-block">Search</button>
+              <button mat-flat-button (click)="search()" color="primary" class="btn-block">Search</button>
             </div>
             <div class="col-md-3">
-              <button mat-stroked-button color="primary" class="btn-block">Add new</button>
+              <button mat-stroked-button (click)="addnew()" color="primary" class="btn-block">Add new</button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <mat-progress-bar [hidden]="loading" mode="query" style="position:absolute"></mat-progress-bar>
   <div class="container-fluid container-fixed-lg">
     <div class="row mt-4">
       <div class="col-md-4 mb-2 mt-2" *ngFor="let consultant of consultants">
-        <user-card [consultant]="consultant"></user-card>
+        <user-card [consultant]="consultant" (reloadCosultant)="getConsultants()"></user-card>
       </div>
     </div>
+    <loadingComponent [loading]="false"></loadingComponent>
   </div>
 </div>

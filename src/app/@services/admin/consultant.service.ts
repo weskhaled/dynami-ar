@@ -28,10 +28,7 @@ export class ConsultantService {
     public getConsultants(args): Observable<any> {
         // get consultants from api
         return this.http.get(ENV.URL_CONSULTANTS, {
-            params: {
-                pageNumber: args.pageIndex,
-                pageSize: args.pageSize
-            }
+            params: args
         }).pipe(
             map((response: PagedData<Consultant>) => {
                 return response;
@@ -40,21 +37,17 @@ export class ConsultantService {
     /**
      * A method that mocks a paged server response
      * @param page The selected page
-     * @returns {any} An observable containing the employee data
+     * @returns {any} An observable containing the client data
      */
     public getResults(page: Page): Observable<PagedData<Client>> {
-        // return of(this.companyData).pipe(map(data => this.getPagedData(page)));
-        // return getPagedData(page);
+
         return this.http.get(ENV.URL_CLIENTS + '?pageNumber=' + Number(page.pageNumber) + '&pageSize=' + Number(page.size)).pipe(
             map((response:PagedData<Client>) => {
                 const pagedData = new PagedData<Client>();
                 page.totalElements = response.page.totalElements;
                 page.totalPages = response.page.totalPages;
-                // const start = page.pageNumber * page.size;
-                // const end = Math.min((start + page.size), page.totalElements);
                 for (let i = 0; i < response.data.length; i++){
                     const jsonObj = response.data[i];
-                    // const employee = new Client(jsonObj.id, jsonObj.firstname, jsonObj.lastname,jsonObj.age,jsonObj.description);
                     pagedData.data.push(<Client>jsonObj);
                 }
                 pagedData.page = page;
@@ -63,29 +56,14 @@ export class ConsultantService {
     }
 
     public update(client: Client, id: number): Observable<any> {
-        // add authorization header with jwt token
-        // let headers = new Headers({ 'Authorization': 'Bearer ' + this.authenticationService.token });
-        // let options = new RequestOptions({ headers: headers });
-
-        // get users from api
         return this.http.put(ENV.URL_CLIENTS+'/'+id, client, this.httpOptions).pipe(
             map((response: any) => response));
     }
     public delete(id: number): Observable<any> {
-        // add authorization header with jwt token
-        // let headers = new Headers({ 'Authorization': 'Bearer ' + this.authenticationService.token });
-        // let options = new RequestOptions({ headers: headers });
-
-        // get users from api
-        return this.http.delete(ENV.URL_CLIENTS+'/'+id, this.httpOptions).pipe(
+        return this.http.delete(ENV.URL_CONSULTANTS+'/'+id, this.httpOptions).pipe(
             map((response: any) => response));
     }
     public add(client: Client): Observable<any> {
-        // add authorization header with jwt token
-        // let headers = new Headers({ 'Authorization': 'Bearer ' + this.authenticationService.token });
-        // let options = new RequestOptions({ headers: headers });
-
-        // get users from api
         return this.http.post(ENV.URL_CLIENTS, client, this.httpOptions).pipe(
             map((response: any) => response));
     }

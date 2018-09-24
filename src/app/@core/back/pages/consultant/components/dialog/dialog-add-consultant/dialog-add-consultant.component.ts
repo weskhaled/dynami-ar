@@ -6,8 +6,8 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { MatTableDataSource } from '@angular/material';
 import { FormGroup, FormArray, FormBuilder, Validators,ReactiveFormsModule  } from '@angular/forms';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { Client } from '../../../../../../../models/client';
-import { ClientService } from '../../../../../../../@services/admin/client.service';
+import { Consultant } from '../../../../../../../models/consultant';
+import { ConsultantService } from '../../../../../../../@services/admin/consultant.service';
 
 @Component({
   selector: 'dialog-add-consultant',
@@ -16,9 +16,9 @@ import { ClientService } from '../../../../../../../@services/admin/client.servi
 })
 export class AddConsultantDialog {
   public title = 'Ajouter Consultant';
-  public client:Client = new Client(null,'','',null,'') ;
+  public consultant:Consultant = new Consultant(null,'','','','',null,'','','','') ;
   constructor(
-    private clientService: ClientService,
+    private consultantService: ConsultantService,
     public dialogRef: MatDialogRef<AddConsultantDialog>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
 
@@ -26,11 +26,11 @@ export class AddConsultantDialog {
   ngOnInit() {
   }
   add(){
-    this.clientService.add(this.client)
-    .subscribe(data => {
-      if(data.status == 'success'){
-        this.dialogRef.close({data:'add'});
-      }
-    });
+    // this.consultantService.add(this.consultant)
+    // .subscribe(data => {
+    //   if(data.status == 'success'){
+    //     this.dialogRef.close({data:'add'});
+    //   }
+    // });
   }
 }
