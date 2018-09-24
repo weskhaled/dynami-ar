@@ -12,6 +12,7 @@
     border-radius: 4px;
     display: flex;
     overflow: hidden;
+    position: relative;
     .item-image {
       display: inline-block;
       position: relative;
@@ -79,20 +80,20 @@
         line-height: 28px;
         font-weight: 300;
         margin-bottom: 10px;
-      &:before {
-        display: inline-block;
-        font: normal normal normal 14px/1 pages-icon;
-        font-size: 10em;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        content: "\e904";
-        position: absolute;
-        z-index: -1;
-        color: rgba(0, 0, 0, 0.02);
-        left: 0;
-        bottom: -105px;
-        pointer-events: none;
-      }
+    }
+    &:before {
+      display: inline-block;
+      font: normal normal normal 14px/1 pages-icon;
+      font-size: 20em;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      content: "\e904";
+      position: absolute;
+      z-index: 0;
+      color: rgba(0, 0, 0, 0.02);
+      right: -95px;
+      bottom: 10px;
+      pointer-events: none;
     }
   }
   

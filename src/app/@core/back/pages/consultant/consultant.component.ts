@@ -18,8 +18,9 @@ import {
 } from "ngx-perfect-scrollbar";
 import { SeoService } from "../../../../@services/front/seo.services";
 import { ConsultantService } from "../../../../@services/admin/consultant.service";
-import { PageEvent } from "@angular/material";
+import { PageEvent, MatDialog, MatSnackBar } from "@angular/material";
 import { Page } from "../../../../models/page";
+import { AddConsultantDialog } from "./components/dialog/dialog-add-consultant/dialog-add-consultant.component";
 @Component({
   selector: "ConsultComponent",
   templateUrl: "./consultant.html",
@@ -53,6 +54,8 @@ export class ConsultantComponent implements OnInit {
   constructor(
     private seo: SeoService,
     private renderer: Renderer2,
+    public dialogaddconsultant: MatDialog,
+    public snackBar: MatSnackBar,
     private consultantService: ConsultantService
   ) {
     this.page.pageNumber = 0;
@@ -66,7 +69,7 @@ export class ConsultantComponent implements OnInit {
       image: "https://instafire-app.firebaseapp.com/assets/meerkat.jpeg",
       slug: "contact-page"
     });
-    this.getConsultants({ pageSize: 10, pageIndex: 0 });
+    this.getConsultants({ pageSize: this.pageSize, pageIndex: this.pageIndex });
   }
   ngAfterViewInit() {}
   getConsultants(pageInfo) {
@@ -84,6 +87,23 @@ export class ConsultantComponent implements OnInit {
       this.consultants = data.data;
       this.length = data.page.totalElements;
       this.pageIndex = data.page.pageNumber;
+    });
+  }
+  addnew() {
+    const dialogaddclientRef = this.dialogaddconsultant.open(AddConsultantDialog, {
+      minWidth: '40%',
+      width: '60%',
+    });
+    dialogaddclientRef.afterClosed().subscribe(result => {
+      if (result) {
+        if (result.data == 'add') {
+          this.snackBar.open('Add', 'success', {
+            duration: 2000,
+          });
+          // this.setPage({ offset: this.page.pageNumber });
+          // this.setPage({ offset: this.page.pageNumber, pageSize: 10 });
+        }
+      }
     });
   }
 }
