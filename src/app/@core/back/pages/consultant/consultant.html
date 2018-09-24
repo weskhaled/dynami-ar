@@ -17,28 +17,30 @@
   </div>
   <!-- END JUMBOTRON -->
   <!-- START CONTAINER FLUID -->
-  <div class="container-fluid container-fixed-lg bg-white pt-3 pb-1">
+  <div class="bg-white pt-3 pb-1">
+    <div class="container-fluid container-fixed-lg">
       <div class="row">
-          <div class="col-md-5">
-            <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = onPaginateChange($event)">
-            </mat-paginator>
-          </div>
-          <div class="col-md-7">
-            <div class="row mt-2 mb-2">
-                  <div class="col-md-6">
-                    <mat-form-field class="" style="width:100%">
-                      <input matInput placeholder="Search Consultant" value="">
-                    </mat-form-field>
-                  </div>
-                  <div class="col-md-3">
-                    <button mat-flat-button color="primary" class="btn-block">Search</button>
-                  </div>
-                  <div class="col-md-3">
-                    <button mat-stroked-button color="primary" class="btn-block">Add new</button>
-                  </div>
+        <div class="col-md-5">
+          <mat-paginator [length]="length" [pageIndex]="pageIndex" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = $event; onPaginateChange($event)">
+          </mat-paginator>
+        </div>
+        <div class="col-md-7">
+          <div class="row mt-2 mb-2">
+            <div class="col-md-6">
+              <mat-form-field class="" style="width:100%">
+                <input matInput placeholder="Search Consultant" value="">
+              </mat-form-field>
+            </div>
+            <div class="col-md-3">
+              <button mat-flat-button color="primary" class="btn-block">Search</button>
+            </div>
+            <div class="col-md-3">
+              <button mat-stroked-button color="primary" class="btn-block">Add new</button>
             </div>
           </div>
         </div>
+      </div>
+    </div>
   </div>
   <div class="container-fluid container-fixed-lg">
     <div class="row mt-4">

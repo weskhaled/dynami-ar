@@ -1,5 +1,6 @@
 
 import { Component, OnInit, Inject, Input } from '@angular/core';
+import { Consultant } from '../../../../../../models/consultant';
 
 @Component({
   selector: 'user-card',
@@ -7,7 +8,7 @@ import { Component, OnInit, Inject, Input } from '@angular/core';
   styleUrls: ['./style.scss']
 })
 export class UserCard implements OnInit {
-  @Input() consultant: Object;
+  @Input() consultant: Consultant;
   constructor() {}
   ngOnInit() {
   }

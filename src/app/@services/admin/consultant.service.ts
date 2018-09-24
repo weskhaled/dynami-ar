@@ -25,9 +25,14 @@ export class ConsultantService {
         private http: HttpClient,
         private authenticationService: AuthenticationService) {
     }
-    public getConsultants(): Observable<any> {
+    public getConsultants(args): Observable<any> {
         // get consultants from api
-        return this.http.get(ENV.URL_CONSULTANTS, this.httpOptions).pipe(
+        return this.http.get(ENV.URL_CONSULTANTS, {
+            params: {
+                pageNumber: args.pageIndex,
+                pageSize: args.pageSize
+            }
+        }).pipe(
             map((response: PagedData<Consultant>) => {
                 return response;
             }));
