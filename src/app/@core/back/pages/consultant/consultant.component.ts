@@ -74,7 +74,7 @@ export class ConsultantComponent implements OnInit {
     this.getConsultants({ pageSize: this.pageSize, pageIndex: this.pageIndex });
   }
   ngAfterViewInit() {}
-  getConsultants(pageInfo={ pageSize: this.pageEvent.pageSize, pageIndex: this.pageEvent.pageIndex }) {
+  getConsultants(pageInfo) {
     this.consultantService.getConsultants(pageInfo).subscribe(data => {
       // console.log(data);
       this.consultants = data.data;
@@ -86,12 +86,12 @@ export class ConsultantComponent implements OnInit {
   onPaginateChange(event) {
     // console.log(event);
     this.loading = false;
-    this.getConsultants({ pageSize: event.pageSize, pageIndex: event.pageIndex });
+    this.getConsultants({ pageSize: event.pageSize, pageNumber: event.pageIndex });
   }
   search() {
     // console.log(event);
     this.loading = false;
-    let q = { pageSize: -1, pageIndex: 0, search: this.searchq };
+    let q = { pageSize: -1, pageNumber: 0, search: this.searchq };
     console.log(q);
     this.consultantService.getConsultants(q).subscribe(data => {
       // console.log(data);

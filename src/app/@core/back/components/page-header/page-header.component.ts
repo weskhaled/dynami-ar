@@ -21,8 +21,6 @@ export class PageHeader implements OnInit {
     this.userService.getUsers()
       .subscribe(data => {
         this.username = data.name;
-      }, (err) => {
-        if (err === 'Unauthorized') this.router.navigate(['auth/login']);
       });
   }
   ngOnInit() {

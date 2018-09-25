@@ -1,20 +1,65 @@
-import { Injectable } from '@angular/core';
-import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
-import { Observable } from 'rxjs';
+
+import { tap } from "rxjs/operators";
+import { Injectable } from "@angular/core";
+import {
+  HttpInterceptor,
+  HttpHandler,
+  HttpSentEvent,
+  HttpHeaderResponse,
+  HttpProgressEvent,
+  HttpUserEvent,
+  HttpErrorResponse,
+  HttpRequest,
+  HttpResponse,
+  HttpEvent
+} from "@angular/common/http";
+import { Router } from "@angular/router";
+import { Observable } from "rxjs";
+import { catchError } from "rxjs/operators";
+
+const TOKEN_HEADER_KEY = "Authorization";
 
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
-    intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        // add authorization header with jwt token if available
-        let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        if (currentUser && currentUser.token) {
-            request = request.clone({
-                setHeaders: { 
-                    Authorization: `Bearer ${currentUser.token}`
-                }
-            });
-        }
+  constructor(private router: Router) {}
 
-        return next.handle(request);
+  intercept(
+    req: HttpRequest<any>,
+    next: HttpHandler
+  ): Observable<
+    | HttpSentEvent
+    | HttpHeaderResponse
+    | HttpProgressEvent
+    | HttpResponse<any>
+    | HttpUserEvent<any>
+  > {
+    let authReq = req;
+    let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    if (currentUser != null) {
+      authReq = req.clone({
+        headers: req.headers.set(
+          TOKEN_HEADER_KEY,
+          "Bearer " + currentUser.token
+        )
+      });
     }
+    return next.handle(authReq).pipe(
+      tap((err: any) => {
+        if (err instanceof HttpErrorResponse) {
+          if (err.status === 401) {
+            localStorage.removeItem("currentUser");
+            this.router.navigate(["auth/login"]);
+          }
+        }
+      }),
+      catchError((error: any, caught: Observable<HttpEvent<any>>) => {
+        if (error.status === 401) {
+            console.log('catchError ',error);
+            localStorage.removeItem("currentUser");
+            this.router.navigate(["auth/login"],{ queryParams: { error:  'Unauthorized'} });
+        }
+        throw error;
+      })
+    );
+  }
 }
