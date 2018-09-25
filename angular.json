@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mycvx": {
+    "dynamix": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mycvx",
+            "outputPath": "dist/dynamix",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mycvx:build"
+            "browserTarget": "dynamix:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mycvx:build:production"
+              "browserTarget": "dynamix:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mycvx:build"
+            "browserTarget": "dynamix:build"
           }
         },
         "test": {
@@ -113,7 +113,7 @@
         }
       }
     },
-    "mycvx-e2e": {
+    "dynamix-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -121,7 +121,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "mycvx:serve"
+            "devServerTarget": "dynamix:serve"
           }
         },
         "lint": {
@@ -136,5 +136,5 @@
       }
     }
   },
-  "defaultProject": "mycvx"
+  "defaultProject": "dynamix"
 }

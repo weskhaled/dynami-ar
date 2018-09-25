@@ -46,7 +46,7 @@
   <div class="container-fluid container-fixed-lg">
     <div class="row mt-4">
       <div class="col-md-4 mb-2 mt-2" *ngFor="let consultant of consultants">
-        <user-card [consultant]="consultant" (reloadCosultant)="getConsultants()"></user-card>
+        <user-card [consultant]="consultant" (reloadCosultant)="getConsultants({ pageSize: this.pageSize, pageNumber: this.pageIndex })"></user-card>
       </div>
     </div>
     <loadingComponent [loading]="false"></loadingComponent>

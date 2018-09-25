@@ -71,7 +71,7 @@ export class ConsultantComponent implements OnInit {
       image: "https://instafire-app.firebaseapp.com/assets/meerkat.jpeg",
       slug: "contact-page"
     });
-    this.getConsultants({ pageSize: this.pageSize, pageIndex: this.pageIndex });
+    this.getConsultants({ pageSize: this.pageSize, pageNumber: this.pageIndex });
   }
   ngAfterViewInit() {}
   getConsultants(pageInfo) {
@@ -87,6 +87,8 @@ export class ConsultantComponent implements OnInit {
     // console.log(event);
     this.loading = false;
     this.getConsultants({ pageSize: event.pageSize, pageNumber: event.pageIndex });
+    this.pageSize = event.pageSize;
+    this.pageIndex = event.pageIndex;
   }
   search() {
     // console.log(event);
