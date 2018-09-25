@@ -1,11 +1,5 @@
-import { Component, OnInit, OnDestroy, Inject, ViewChild, Input } from '@angular/core';
-import { PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
-import { MatSelectModule } from '@angular/material/select';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { MatTableDataSource } from '@angular/material';
-import { FormGroup, FormArray, FormBuilder, Validators,ReactiveFormsModule  } from '@angular/forms';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { Component, OnDestroy, Inject, ViewChild, Input } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Consultant } from '../../../../../../../models/consultant';
 import { ConsultantService } from '../../../../../../../@services/admin/consultant.service';
 
@@ -16,6 +10,13 @@ import { ConsultantService } from '../../../../../../../@services/admin/consulta
 })
 export class AddConsultantDialog {
   public title = 'Ajouter Consultant';
+  public selectedValue: string;
+
+  public currencies: any[] = [
+    {value: 'euro', viewValue: 'EURO'},
+    {value: 'usd', viewValue: 'USD'},
+    {value: 'dt', viewValue: 'DT'}
+  ];
   public consultant:Consultant = new Consultant(null,'','','','',null,'','','','') ;
   constructor(
     private consultantService: ConsultantService,

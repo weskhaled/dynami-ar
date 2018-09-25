@@ -2,3 +2,30 @@
     display: block!important;
     position: relative!important;
 }
+.mat-input-element,
+.mat-select{
+    color: black;
+    font-weight: 500;
+    font-style: normal;
+}
+.mat-datepicker-toggle{
+    position: absolute;
+    right: 0;
+    top: 0px;
+    z-index: 10;
+}
+input[type=file] {
+    cursor: pointer;
+    width: 100%;
+    padding-top: 5px;
+    overflow: hidden;
+  }
+  
+  input[type=file]:before {
+    width: 100%;
+    content: 'Select your file: ';
+  }
+  
+  input[type=file]::-webkit-file-upload-button {
+    visibility: hidden;
+  }

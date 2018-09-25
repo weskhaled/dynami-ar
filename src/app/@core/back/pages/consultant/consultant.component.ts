@@ -91,12 +91,9 @@ export class ConsultantComponent implements OnInit {
     this.pageIndex = event.pageIndex;
   }
   search() {
-    // console.log(event);
     this.loading = false;
     let q = { pageSize: -1, pageNumber: 0, search: this.searchq };
-    console.log(q);
     this.consultantService.getConsultants(q).subscribe(data => {
-      // console.log(data);
       this.consultants = data.data;
       this.length = data.page.totalElements;
       this.pageIndex = data.page.pageNumber;

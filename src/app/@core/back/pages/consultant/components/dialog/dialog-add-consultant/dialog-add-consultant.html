@@ -7,6 +7,77 @@
             <h5 class="semi-bold">{{title}}</h5>
         </div>
         <div class="modal-body">
+            <form role="form">
+                <div class="form-group-attached">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-group-default">
+                                <label for="firstname">Nom</label>
+                                <input id="firstname" name="firstname" type="email" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-default">
+                                <label for="photo">Photo</label>
+                                <input name="photo" id="photo" type="file" multiple class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group form-group-default">
+                                <label for="post">Post</label>
+                                <input id="post" name="post" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="form-group form-group-default">
+                                <label for="company">Company</label>
+                                <input id="company" name="company" type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-group-default">
+                                <label for="price">Price</label>
+                                <input id="price" name="price" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-default">
+                                <label for="currency">Currency</label>
+                                <mat-select placeholder="" [(ngModel)]="selectedValue" name="currency">
+                                        <mat-option *ngFor="let currency of currencies" [value]="currency.value">
+                                          {{currency.viewValue}}
+                                        </mat-option>
+                                </mat-select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group form-group-default">
+                                <label for="skype">Skype</label>
+                                <input id="skype" name="skype" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group form-group-default">
+                                <label for="phone">phone</label>
+                                <input id="phone" name="phone" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group form-group-default">
+                                <label for="wokrpermit" (click)="picker.open()">Wokr Date</label>
+                                <input matInput [matDatepicker]="picker" (click)="picker.open()" placeholder="">
+                                <mat-datepicker #picker></mat-datepicker>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
             <div class="row">
                 <div class="col-md-8">
                 </div>
