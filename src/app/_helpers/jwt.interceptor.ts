@@ -58,6 +58,9 @@ export class JwtInterceptor implements HttpInterceptor {
             localStorage.removeItem("currentUser");
             this.router.navigate(["auth/login"],{ queryParams: { error:  'Unauthorized'} });
         }
+        if (error instanceof HttpErrorResponse) {
+          console.log(error);
+        }
         throw error;
       })
     );

@@ -12,6 +12,7 @@ export class Consultant {
     skype:string;
     phone:string;
     wokrpermit:string;
+    description:string;
 
     constructor(
         id: number,
@@ -23,11 +24,13 @@ export class Consultant {
         currency:string,
         skype:string,
         phone:string,
-        wokrpermit:string
+        wokrpermit:string,
+        description:string=''
     ){
         this.id = id;
         this.name = name;
-        this.photo = photo;
+        // this.photo = photo;
+        this.photo = '/assets/img/photos/developer/avatar-sm.jpg';
         this.post = post;
         this.company = company;
         this.price =  price;
@@ -35,5 +38,6 @@ export class Consultant {
         this.skype = skype;
         this.phone = phone;
         this.wokrpermit = wokrpermit;
+        this.description = description;
     }
 }

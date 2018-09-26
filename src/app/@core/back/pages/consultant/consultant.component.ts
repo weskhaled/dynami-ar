@@ -31,6 +31,7 @@ export class ConsultantComponent implements OnInit {
   public loading = false;
   public consultants = [
     // {
+    //   id: 1,
     //   name: "Hatem Smin",
     //   photo:
     //     "https://res.cloudinary.com/muhammederdem/image/upload/v1537638518/Ba%C5%9Fl%C4%B1ks%C4%B1z-1.jpg",
@@ -111,8 +112,7 @@ export class ConsultantComponent implements OnInit {
           this.snackBar.open('Add', 'success', {
             duration: 2000,
           });
-          // this.setPage({ offset: this.page.pageNumber });
-          // this.setPage({ offset: this.page.pageNumber, pageSize: 10 });
+          this.getConsultants({ pageSize: this.pageSize, pageNumber: this.pageIndex });
         }
       }
     });

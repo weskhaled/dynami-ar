@@ -55,16 +55,16 @@ export class ConsultantService {
             }));
     }
 
-    public update(client: Client, id: number): Observable<any> {
-        return this.http.put(ENV.URL_CLIENTS+'/'+id, client, this.httpOptions).pipe(
+    public update(consultant: Consultant, id: number): Observable<any> {
+        return this.http.put(ENV.URL_CONSULTANTS+'/'+id, consultant, this.httpOptions).pipe(
             map((response: any) => response));
     }
     public delete(id: number): Observable<any> {
         return this.http.delete(ENV.URL_CONSULTANTS+'/'+id, this.httpOptions).pipe(
             map((response: any) => response));
     }
-    public add(client: Client): Observable<any> {
-        return this.http.post(ENV.URL_CLIENTS, client, this.httpOptions).pipe(
+    public add(consultant: Consultant): Observable<any> {
+        return this.http.post(ENV.URL_CONSULTANTS, consultant, this.httpOptions).pipe(
             map((response: any) => response));
     }
 }

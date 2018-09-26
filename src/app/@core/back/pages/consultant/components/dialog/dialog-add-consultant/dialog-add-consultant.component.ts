@@ -13,25 +13,37 @@ export class AddConsultantDialog {
   public selectedValue: string;
 
   public currencies: any[] = [
-    {value: 'euro', viewValue: 'EURO'},
-    {value: 'usd', viewValue: 'USD'},
-    {value: 'dt', viewValue: 'DT'}
+    { value: 'EURO', viewValue: 'EURO' },
+    { value: 'USD', viewValue: 'USD' },
+    { value: 'DT', viewValue: 'DT' }
   ];
-  public consultant:Consultant = new Consultant(null,'','','','',null,'','','','') ;
+  public consultant: Consultant = new Consultant(null, '', '', '', '', null, '', '', '', '');
   constructor(
     private consultantService: ConsultantService,
     public dialogRef: MatDialogRef<AddConsultantDialog>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
-
+    if (data) {
+      this.consultant = data;
+    }
   }
   ngOnInit() {
   }
-  add(){
-    // this.consultantService.add(this.consultant)
-    // .subscribe(data => {
-    //   if(data.status == 'success'){
-    //     this.dialogRef.close({data:'add'});
-    //   }
-    // });
+  onSubmit() {
+    console.log(this.consultant);
+    if(this.consultant.id == null){
+      this.consultantService.add(this.consultant)
+      .subscribe(data => {
+        if(data.status == 'success'){
+          this.dialogRef.close({data:'add'});
+        }
+      });
+    } else {
+      this.consultantService.update(this.consultant,this.consultant.id)
+      .subscribe(data => {
+        if(data.status == 'success'){
+          this.dialogRef.close({data:'update'});
+        }
+      });
+    }
   }
 }
