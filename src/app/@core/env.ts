@@ -8,7 +8,6 @@ export class ENV {
     // local
     // public static  client_id = 2;
     // public static  client_secret = 'iVnrz73bW0VtqMk4OvJxEpYO5nXYTdHhsgZ8tuhz';
-
     public static  URL_TOKEN = BACK_URL + 'oauth/token';
     public static  URL_GET_USER = V_API + 'user';
     public static  URL_LOGOUT = V_API + 'logout';
@@ -16,5 +15,7 @@ export class ENV {
     public static  URL_CLIENTS = V_API + 'clients';
     // Consutlant
     public static  URL_CONSULTANTS = V_API + 'consultants';
+    // companies
+    public static  URL_COMPANIES = V_API + 'companies';
     public static  FB_APP_ID = '185939708652009';   
  }

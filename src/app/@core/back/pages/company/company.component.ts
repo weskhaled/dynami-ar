@@ -17,16 +17,16 @@ import {
   PerfectScrollbarDirective
 } from "ngx-perfect-scrollbar";
 import { SeoService } from "../../../../@services/front/seo.services";
-import { ConsultantService } from "../../../../@services/admin/consultant.service";
+import { CompanyService } from "../../../../@services/admin/company.service";
 import { PageEvent, MatDialog, MatSnackBar } from "@angular/material";
 import { Page } from "../../../../models/page";
-import { AddConsultantDialog } from "./components/dialog/dialog-add-consultant/dialog-add-consultant.component";
+import { AddCompanyDialog } from "./components/dialog/dialog-add-company/dialog-add-company.component";
 @Component({
-  selector: "ConsultComponent",
-  templateUrl: "./consultant.html",
+  selector: "CompanyComponent",
+  templateUrl: "./company.html",
   styleUrls: ["./style.scss"]
 })
-export class ConsultantComponent implements OnInit {
+export class CompanyComponent implements OnInit {
   public config: PerfectScrollbarConfigInterface = {};
   public loading = false;
   public consultants = [
@@ -57,9 +57,9 @@ export class ConsultantComponent implements OnInit {
   constructor(
     private seo: SeoService,
     private renderer: Renderer2,
-    public dialogaddconsultant: MatDialog,
+    public dialogaddcompany: MatDialog,
     public snackBar: MatSnackBar,
-    private consultantService: ConsultantService
+    private companyService: CompanyService
   ) {
     this.page.pageNumber = 0;
     this.page.size = 10;
@@ -76,7 +76,7 @@ export class ConsultantComponent implements OnInit {
   }
   ngAfterViewInit() {}
   getConsultants(pageInfo) {
-    this.consultantService.getConsultants(pageInfo).subscribe(data => {
+    this.companyService.getCompanies(pageInfo).subscribe(data => {
       // console.log(data);
       this.consultants = data.data;
       this.length = data.page.totalElements;
@@ -95,7 +95,7 @@ export class ConsultantComponent implements OnInit {
   search() {
     this.loading = false;
     let q = { pageSize: -1, pageNumber: 0, search: this.searchq };
-    this.consultantService.getConsultants(q).subscribe(data => {
+    this.companyService.getCompanies(q).subscribe(data => {
       this.consultants = data.data;
       this.length = data.page.totalElements;
       this.pageIndex = data.page.pageNumber;
@@ -103,7 +103,7 @@ export class ConsultantComponent implements OnInit {
     });
   }
   addnew() {
-    const dialogaddconsultantRef = this.dialogaddconsultant.open(AddConsultantDialog, {
+    const dialogaddconsultantRef = this.dialogaddcompany.open(AddCompanyDialog, {
       minWidth: '40%',
       width: '60%',
     });

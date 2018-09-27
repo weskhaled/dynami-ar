@@ -1,15 +1,15 @@
 import { Component, OnDestroy, Inject, ViewChild, Input } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { Consultant } from '../../../../../../../models/consultant';
-import { ConsultantService } from '../../../../../../../@services/admin/consultant.service';
+import { Company } from '../../../../../../../models/company';
+import { CompanyService } from '../../../../../../../@services/admin/company.service';
 
 @Component({
-  selector: 'dialog-add-consultant',
-  templateUrl: 'dialog-add-consultant.html',
+  selector: 'dialog-add-company',
+  templateUrl: 'dialog-add-company.html',
   styleUrls: ['style.scss']
 })
-export class AddConsultantDialog {
-  public title = 'Ajouter Consultant';
+export class AddCompanyDialog {
+  public title = 'Ajouter Company';
   public selectedValue: string;
   public url:any = '';
   public currencies: any[] = [
@@ -17,13 +17,13 @@ export class AddConsultantDialog {
     { value: 'USD', viewValue: 'USD' },
     { value: 'DT', viewValue: 'DT' }
   ];
-  public consultant: Consultant = new Consultant(null, '', '', '', '', null, '', '', '', '');
+  public company: Company = new Company(null, '', '', '', '', null, '', '', '', '');
   constructor(
-    private consultantService: ConsultantService,
-    public dialogRef: MatDialogRef<AddConsultantDialog>,
+    private companyService: CompanyService,
+    public dialogRef: MatDialogRef<AddCompanyDialog>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
     if (data) {
-      this.consultant = data;
+      this.company = data;
     }
   }
   ngOnInit() {
@@ -47,16 +47,16 @@ export class AddConsultantDialog {
     }
   }
   onSubmit() {
-    console.log(this.consultant);
-    if(this.consultant.id == null){
-      this.consultantService.add(this.consultant)
+    console.log(this.company);
+    if(this.company.id == null){
+      this.companyService.add(this.company)
       .subscribe(data => {
         if(data.status == 'success'){
           this.dialogRef.close({data:'add'});
         }
       });
     } else {
-      this.consultantService.update(this.consultant,this.consultant.id)
+      this.companyService.update(this.company,this.company.id)
       .subscribe(data => {
         if(data.status == 'success'){
           this.dialogRef.close({data:'update'});

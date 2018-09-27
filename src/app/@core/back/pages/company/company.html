@@ -1,0 +1,59 @@
+<!-- START PAGE CONTENT -->
+<div class="content sm-gutter">
+  <!-- START JUMBOTRON -->
+  <div class="jumbotron mb-0" data-pages="parallax">
+    <div class=" container-fluid container-fixed-lg sm-p-l-0 sm-p-r-0">
+      <div class="inner">
+        <!-- START BREADCRUMB -->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="#">Dynamix</a>
+          </li>
+          <li class="breadcrumb-item active">Liste of Consultant</li>
+        </ol>
+        <!-- END BREADCRUMB -->
+      </div>
+    </div>
+  </div>
+  <!-- END JUMBOTRON -->
+  <!-- START CONTAINER FLUID -->
+  <div class="bg-white pt-3 pb-1">
+    <div class="container-fluid container-fixed-lg">
+      <div class="row">
+        <div class="col-md-5">
+          <mat-paginator [length]="length" [pageIndex]="pageIndex" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+            (page)="pageEvent = $event; onPaginateChange($event)">
+          </mat-paginator>
+        </div>
+        <div class="col-md-7">
+          <div class="row mt-2 mb-2">
+            <form (submit)="search()" class="col-md-9">
+              <div class="row">
+                <div class="col-md-9">
+                  <mat-form-field class="" style="width:100%">
+                    <input name="searchq" [(ngModel)]="searchq" matInput placeholder="Search Consultant" value="">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                  <button mat-flat-button type="submit" name="submitsearch" color="primary" class="btn-block">Search</button>
+                </div>
+              </div>
+            </form>
+            <div class="col-md-3">
+              <button mat-stroked-button (click)="addnew()" color="primary" class="btn-block">Add new</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <mat-progress-bar [hidden]="loading" mode="query" style="position:absolute"></mat-progress-bar>
+  <div class="container-fluid container-fixed-lg">
+    <div class="row mt-4">
+      <div class="col-md-4 mb-2 mt-2" *ngFor="let consultant of consultants">
+        <user-card [company]="company" (reloadCosultant)="getConsultants({ pageSize: this.pageSize, pageNumber: this.pageIndex })"></user-card>
+      </div>
+    </div>
+    <loadingComponent [loading]="false"></loadingComponent>
+  </div>
+</div>
