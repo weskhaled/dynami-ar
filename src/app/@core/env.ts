@@ -1,5 +1,5 @@
 const BACK_URL = 'https://weslati-khaled.herokuapp.com/' ;
-// const BACK_URL = 'http://medicallabs.wes/' ;
+// const BACK_URL = 'http://127.0.0.1:8000/' ;
 const BACK_API = BACK_URL + 'api/' ;
 const V_API = BACK_API + 'v1/' ;
 export class ENV {  

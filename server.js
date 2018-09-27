@@ -1,12 +1,17 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const PORT = process.env.PORT || 8080;
 app.use(express.static('./dist/dynamix'));
 app.get('/*', function(req, res) {
   res.sendFile(path.join('./dist/dynamix/index.html'));
 });
-app.listen(process.env.PORT || 8080);
-// server.js
+// app.listen(process.env.PORT || 8080);
+app.listen(PORT, function () {
+  console.log('Node.js server is running on port ' + PORT);
+});
+
+// // server.js
 
 // const path = require('path');
 // const fs = require('fs');
@@ -38,7 +43,6 @@ app.listen(process.env.PORT || 8080);
 //   res.setHeader('Access-Control-Allow-Credentials', true);
 //   next();
 // });
- 
 
 // app.get('/api', function (req, res) {
 //   // return 'test'

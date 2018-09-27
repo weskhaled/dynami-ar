@@ -17,7 +17,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group form-group-default"  [ngStyle]="url">
+                            <div class="form-group form-group-default" [ngStyle]="url">
                                 <label for="photo">Photo</label>
                                 <input name="photo" (change)="onSelectFile($event)" id="photo" type="file" multiple class="form-control"/>
                             </div>
@@ -25,29 +25,29 @@
                     </div>
                     <div class="row">
                         <div class="col-md-5">
-                            <div class="form-group form-group-default">
+                            <div class="form-group form-group-default required" [ngClass]="{ 'has-error': f.submitted && post.invalid }">
                                 <label for="post">Post</label>
-                                <input id="post" [(ngModel)]="consultant.post" name="post" type="text" class="form-control">
+                                <input id="post" [(ngModel)]="consultant.post" name="post" #post="ngModel" required type="text" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-7">
-                            <div class="form-group form-group-default">
+                            <div class="form-group form-group-default required" [ngClass]="{ 'has-error': f.submitted && company.invalid }">
                                 <label for="company">Company</label>
-                                <input id="company" [(ngModel)]="consultant.company" name="company" type="text" class="form-control">
+                                <input id="company" [(ngModel)]="consultant.company" name="company" #company="ngModel" required type="text" class="form-control">
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group form-group-default">
+                            <div class="form-group form-group-default required" [ngClass]="{ 'has-error': f.submitted && price.invalid }">
                                 <label for="price">Price</label>
-                                <input id="price" [(ngModel)]="consultant.price" name="price" type="text" class="form-control">
+                                <input id="price" [(ngModel)]="consultant.price" name="price"  #price="ngModel" required type="text" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group form-group-default">
+                            <div class="form-group form-group-default required" [ngClass]="{ 'has-error': f.submitted && currency.invalid }">
                                 <label for="currency">Currency</label>
-                                <mat-select placeholder=""  [(ngModel)]="consultant.currency" name="currency">
+                                <mat-select placeholder="" #currency="ngModel" required [(ngModel)]="consultant.currency" name="currency">
                                         <mat-option *ngFor="let currency of currencies" [value]="currency.value">
                                           {{currency.viewValue}}
                                         </mat-option>
@@ -57,21 +57,21 @@
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <div class="form-group form-group-default">
+                            <div class="form-group form-group-default required" [ngClass]="{ 'has-error': f.submitted && skype.invalid }">
                                 <label for="skype">Skype</label>
-                                <input id="skype" [(ngModel)]="consultant.skype" name="skype" type="text" class="form-control">
+                                <input id="skype" [(ngModel)]="consultant.skype" name="skype" #skype="ngModel" required type="text" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group form-group-default">
+                            <div class="form-group form-group-default required" [ngClass]="{ 'has-error': f.submitted && phone.invalid }">
                                 <label for="phone">phone</label>
-                                <input id="phone" [(ngModel)]="consultant.phone" name="phone" type="text" class="form-control">
+                                <input id="phone" [(ngModel)]="consultant.phone" name="phone" #phone="ngModel" required type="text" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group form-group-default">
+                            <div class="form-group form-group-default required" [ngClass]="{ 'has-error': f.submitted && wokrpermit.invalid }">
                                 <label for="wokrpermit" (click)="picker.open()">Wokr Date</label>
-                                <input matInput [(ngModel)]="consultant.wokrpermit" name="wokrpermit" [matDatepicker]="picker" (click)="picker.open()" placeholder="">
+                                <input matInput [(ngModel)]="consultant.wokrpermit" name="wokrpermit" #wokrpermit="ngModel" required [matDatepicker]="picker" (click)="picker.open()" placeholder="">
                                 <mat-datepicker #picker></mat-datepicker>
                             </div>
                         </div>

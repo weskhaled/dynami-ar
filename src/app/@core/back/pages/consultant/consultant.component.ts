@@ -46,10 +46,10 @@ export class ConsultantComponent implements OnInit {
   ];
   page = new Page();
   // MatPaginator Inputs
-  length = 0;
+  length:number = 0;
   pageSize = 5;
   pageIndex = 0;
-  pageSizeOptions: number[] = [5, 10, 25, 100];
+  pageSizeOptions: number[] = [5];
   // MatPaginator Output
   public pageEvent: PageEvent;
   public searchq :string = '';
@@ -81,6 +81,13 @@ export class ConsultantComponent implements OnInit {
       this.consultants = data.data;
       this.length = data.page.totalElements;
       this.pageIndex = data.page.pageNumber;
+      this.pageSizeOptions = [
+        5,
+        ~~(data.page.totalElements / 4),
+        ~~(data.page.totalElements / 3),
+        ~~(data.page.totalElements / 2),
+        data.page.totalElements,
+          ];
       this.loading = true;
     });
   }
