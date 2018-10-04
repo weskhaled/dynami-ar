@@ -2107,8 +2107,14 @@ div.cs-skin-slide{
             padding-left: 12px;
         }
         .form-input-group{
-            width: 100%;
+            position: relative;
+            -webkit-box-flex: 1;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+            width: 1%;
+            margin-bottom: 0;
         }
+        
         .form-control {
             margin-top: -2px;
             margin-bottom: 3px;

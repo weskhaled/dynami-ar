@@ -726,21 +726,9 @@ a {
   clear: both;
   }
   /*badge*/
-  .badge {
-   /*font-size: 11px !important;*/
-   font-weight: 300;
-   letter-spacing: .8px;
-   text-align: center;
-   height: 18px;
-   padding: 3px 6px 3px 6px;
-   -webkit-border-radius: 12px !important;
-   -moz-border-radius: 12px !important;
-   border-radius: 12px !important;
-   background-color: #6b5488;
-   font-weight: normal;
-   -webkit-font-smoothing: auto;
-   -moz-osx-font-smoothing: auto;
-   text-shadow: none !important;
+  .badge-primary {
+    color: #fff;
+    background-color: #6b5488;
   }
   .badge.top {
    position: absolute;

@@ -43,7 +43,8 @@ export class AddConsultantDialog {
           // this.url = photo;
           // this.url = {'background-image':  'url(data:'+photo.type+';base64,'+photo.base64+')'};
           // console.log(JSON.parse(JSON.stringify({filename: file.name, filetype : file.type, base64: (reader.result as string).split(',')[1]})));
-      };
+          this.consultant.photo = photo;
+        };
     }
   }
   onSubmit() {

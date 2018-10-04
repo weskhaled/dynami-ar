@@ -72,6 +72,7 @@ export class ConsultantComponent implements OnInit {
       image: "https://instafire-app.firebaseapp.com/assets/meerkat.jpeg",
       slug: "contact-page"
     });
+    this.loading = false;
     this.getConsultants({ pageSize: this.pageSize, pageNumber: this.pageIndex });
   }
   ngAfterViewInit() {}
@@ -79,35 +80,39 @@ export class ConsultantComponent implements OnInit {
     this.consultantService.getConsultants(pageInfo).subscribe(data => {
       // console.log(data);
       this.consultants = data.data;
-      this.length = data.page.totalElements;
-      this.pageIndex = data.page.pageNumber;
-      this.pageSizeOptions = [
-        5,
-        ~~(data.page.totalElements / 4),
-        ~~(data.page.totalElements / 3),
-        ~~(data.page.totalElements / 2),
-        data.page.totalElements,
-          ];
+      // console.log(this.searchq)
+      if(this.searchq != ''){
+        // this.length = data.page.totalSearchElements;
+        this.length = data.total;
+      } else {
+        this.length = data.total;
+      }
+      this.pageIndex = data.current_page-1;
+      this.pageSizeOptions = [this.length];
+      if(this.length >= 5){
+        this.pageSizeOptions.push(5)
+      }
+      if(this.length >= 25){
+        this.pageSizeOptions.push(25)
+      }
+      if(this.length >= 50){
+        this.pageSizeOptions.push(50)
+      }
       this.loading = true;
     });
   }
   onPaginateChange(event) {
     // console.log(event);
     this.loading = false;
-    this.getConsultants({ pageSize: event.pageSize, pageNumber: event.pageIndex });
+    this.getConsultants({ pageSize: event.pageSize, pageNumber: event.pageIndex,search: this.searchq });
     this.pageSize = event.pageSize;
     this.pageIndex = event.pageIndex;
-    this.searchq = '';
+    // this.searchq = '';
   }
   search() {
     this.loading = false;
-    let q = { pageSize: -1, pageNumber: 0, search: this.searchq };
-    this.consultantService.getConsultants(q).subscribe(data => {
-      this.consultants = data.data;
-      this.length = data.page.totalElements;
-      this.pageIndex = data.page.pageNumber;
-      this.loading = true;
-    });
+    let q = { pageSize: this.pageSize, pageNumber: 0, search: this.searchq };
+    this.getConsultants(q);
   }
   addnew() {
     const dialogaddconsultantRef = this.dialogaddconsultant.open(AddConsultantDialog, {
@@ -120,7 +125,7 @@ export class ConsultantComponent implements OnInit {
           this.snackBar.open('Add', 'success', {
             duration: 2000,
           });
-          this.getConsultants({ pageSize: this.pageSize, pageNumber: this.pageIndex });
+          this.getConsultants({ pageSize: this.pageSize, pageNumber: this.pageIndex,search: this.searchq });
         }
       }
     });
