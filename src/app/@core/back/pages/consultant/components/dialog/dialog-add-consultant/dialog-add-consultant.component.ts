@@ -12,6 +12,8 @@ export class AddConsultantDialog {
   public title = 'Ajouter Consultant';
   public selectedValue: string;
   public url:any = '';
+  public local_photo:any = '';
+  public photo:any='';
   public currencies: any[] = [
     { value: 'EURO', viewValue: 'EURO' },
     { value: 'USD', viewValue: 'USD' },
@@ -27,6 +29,9 @@ export class AddConsultantDialog {
     }
   }
   ngOnInit() {
+    if(this.consultant.photo!=''){
+      this.local_photo = this.consultant.photo;
+    }
   }
   onSelectFile(event) {
     let reader = new FileReader();
@@ -34,7 +39,7 @@ export class AddConsultantDialog {
       let file = event.target.files[0];
       reader.readAsDataURL(file);
       reader.onload = () => {
-        let photo = JSON.parse(JSON.stringify(
+        this.photo = JSON.parse(JSON.stringify(
           {
             filename: file.name,
             filetype : file.type,
@@ -42,13 +47,14 @@ export class AddConsultantDialog {
           }));
           // this.url = photo;
           // this.url = {'background-image':  'url(data:'+photo.type+';base64,'+photo.base64+')'};
+          this.local_photo = 'data:'+this.photo.filetype+';base64,'+this.photo.base64;
           // console.log(JSON.parse(JSON.stringify({filename: file.name, filetype : file.type, base64: (reader.result as string).split(',')[1]})));
-          this.consultant.photo = photo;
         };
     }
   }
   onSubmit() {
     console.log(this.consultant);
+    this.consultant.photo = this.photo;
     if(this.consultant.id == null){
       this.consultantService.add(this.consultant)
       .subscribe(data => {

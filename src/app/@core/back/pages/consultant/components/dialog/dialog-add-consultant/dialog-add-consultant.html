@@ -18,7 +18,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group form-group-default input-group">
+                            <div class="form-group form-group-default consult-photo-form input-group">
                                 <div class="form-input-group">
                                     <label for="photo">Photo</label>
                                     <input name="photo" (change)="onSelectFile($event)" id="photo" type="file" multiple
@@ -26,7 +26,7 @@
                                 </div>
                                 <div class="input-group-append ">
                                     <span class="input-group-text consult-photo">
-                                        Images
+                                        <img src="{{local_photo}}" alt="">
                                     </span>
                                 </div>
                             </div>
