@@ -4,40 +4,33 @@
 export class Company {
     id: number;
     name:string;
-    photo:string;
-    post:string;
-    company:string;
-    price: number;
-    currency:string;
-    skype:string;
+    business_type:string;
+    company_name:string;
     phone:string;
-    wokrpermit:string;
+    sector:string;
+    mail:string;
+    creation:string;
     description:string;
 
     constructor(
         id: number,
         name:string,
-        photo:string,
-        post:string,
-        company:string,
-        price: number,
-        currency:string,
-        skype:string,
+        business_type:string,
+        company_name:string,
         phone:string,
-        wokrpermit:string,
-        description:string=''
+        sector:string,
+        mail:string,
+        creation:string,
+        description:string,
     ){
         this.id = id;
         this.name = name;
-        // this.photo = photo;
-        this.photo = '/assets/img/photos/developer/avatar-sm.jpg';
-        this.post = post;
-        this.company = company;
-        this.price =  price;
-        this.currency = currency;
-        this.skype = skype;
+        this.company_name = company_name;
+        this.business_type = business_type;
         this.phone = phone;
-        this.wokrpermit = wokrpermit;
+        this.sector = sector;
+        this.mail = mail;
+        this.creation = creation;
         this.description = description;
     }
 }

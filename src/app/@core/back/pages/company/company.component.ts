@@ -21,6 +21,7 @@ import { CompanyService } from "../../../../@services/admin/company.service";
 import { PageEvent, MatDialog, MatSnackBar } from "@angular/material";
 import { Page } from "../../../../models/page";
 import { AddCompanyDialog } from "./components/dialog/dialog-add-company/dialog-add-company.component";
+import { Company } from "../../../../models/company";
 @Component({
   selector: "CompanyComponent",
   templateUrl: "./company.html",
@@ -29,20 +30,51 @@ import { AddCompanyDialog } from "./components/dialog/dialog-add-company/dialog-
 export class CompanyComponent implements OnInit {
   public config: PerfectScrollbarConfigInterface = {};
   public loading = false;
-  public consultants = [
-    // {
-    //   id: 1,
-    //   name: "Hatem Smin",
-    //   photo:
-    //     "https://res.cloudinary.com/muhammederdem/image/upload/v1537638518/Ba%C5%9Fl%C4%B1ks%C4%B1z-1.jpg",
-    //   post: "Java developer ",
-    //   company: "Dynamix",
-    //   price: 4500,
-    //   currency: "Euro",
-    //   skype: "hsmin",
-    //   phone: "+216 33445554",
-    //   wokrpermit: "15/02/2018"
-    // }
+  public companies:Company[] = [
+    {
+      id: 1,
+      name: "Hatem Smin",
+      company_name: "Dynamix-it",
+      business_type: "No Type",
+      phone: "+(216)557773443",
+      sector:"No Sector",
+      mail:"wes@test.test",
+      creation:"554557773443",
+      description:"No Description"
+    },
+    {
+      id: 2,
+      name: "Oueslati Khaled",
+      company_name: "Peaksource",
+      business_type: "No Type",
+      phone: "+(216)557773443",
+      sector:"No Sector",
+      mail:"wes@test.test",
+      creation:"554557773443",
+      description:"No Description"
+    },
+    {
+      id: 1,
+      name: "Hatem Smin",
+      company_name: "Dynamix-it",
+      business_type: "No Type",
+      phone: "+(216)557773443",
+      sector:"No Sector",
+      mail:"wes@test.test",
+      creation:"554557773443",
+      description:"No Description"
+    },
+    {
+      id: 2,
+      name: "Oueslati Khaled",
+      company_name: "Peaksource",
+      business_type: "No Type",
+      phone: "+(216)557773443",
+      sector:"No Sector",
+      mail:"wes@test.test",
+      creation:"554557773443",
+      description:"No Description"
+    },
   ];
   page = new Page();
   // MatPaginator Inputs
@@ -72,35 +104,16 @@ export class CompanyComponent implements OnInit {
       image: "https://instafire-app.firebaseapp.com/assets/meerkat.jpeg",
       slug: "contact-page"
     });
-    this.getConsultants({ pageSize: this.pageSize, pageNumber: this.pageIndex });
   }
   ngAfterViewInit() {}
-  getConsultants(pageInfo) {
-    this.companyService.getCompanies(pageInfo).subscribe(data => {
-      // console.log(data);
-      this.consultants = data.data;
-      this.length = data.page.totalElements;
-      this.pageIndex = data.page.pageNumber;
-      this.loading = true;
-    });
-  }
   onPaginateChange(event) {
     // console.log(event);
     this.loading = false;
-    this.getConsultants({ pageSize: event.pageSize, pageNumber: event.pageIndex });
-    this.pageSize = event.pageSize;
-    this.pageIndex = event.pageIndex;
-    this.searchq = '';
   }
   search() {
     this.loading = false;
-    let q = { pageSize: -1, pageNumber: 0, search: this.searchq };
-    this.companyService.getCompanies(q).subscribe(data => {
-      this.consultants = data.data;
-      this.length = data.page.totalElements;
-      this.pageIndex = data.page.pageNumber;
-      this.loading = true;
-    });
+    let q = { pageSize: this.pageSize, pageNumber: 0, search: this.searchq };
+    // this.getCompanies(q);
   }
   addnew() {
     const dialogaddconsultantRef = this.dialogaddcompany.open(AddCompanyDialog, {
@@ -113,7 +126,7 @@ export class CompanyComponent implements OnInit {
           this.snackBar.open('Add', 'success', {
             duration: 2000,
           });
-          this.getConsultants({ pageSize: this.pageSize, pageNumber: this.pageIndex });
+          // this.getConsultants({ pageSize: this.pageSize, pageNumber: this.pageIndex,search: this.searchq });
         }
       }
     });

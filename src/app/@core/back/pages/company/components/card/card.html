@@ -1,3 +1,58 @@
-<div class="item" domflag>
-
+<div class="muck-up">
+    <div class="top">
+        <div class="mock-overlay"></div>
+        <div class="nav">
+        </div>
+        <div class="user-profile">
+            <span class="linkedinicon"><i class="fa fa-linkedin"></i></span>
+            <div class="user-details">
+                <h4>{{company.name}}</h4>
+                <p>{{company.company_name}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="filter-btn">
+        <a href="javascript:void(0);" (click)="Clickedtest()" id="one">
+            <i class="pg-form"></i>
+        </a>
+        <a href="javascript:void(0);" (click)="Clickedtest()" id="two">
+            <i class="fa fa-phone"></i>
+        </a>
+        <a href="javascript:void(0);" (click)="deletecompany(company)" id="three">
+            <i class="pg-trash"></i>
+        </a>
+        <a href="javascript:void(0);" (click)="editconsultant(company)" id="all">
+            <i class="fa fa-edit"></i>
+        </a>
+        <span class="toggle-btn pg-menu_justify"></span>
+    </div>
+    <div class="clearfix"></div>
+    <div class="bottom">
+        <ul class="tasks">
+                <li class="row one red">
+                    <div class="col-md-5 task-title">Business Type : </div>
+                    <div class="col-md-7">{{company.business_type}}</div>
+                </li>
+                <li class="row one red">
+                    <div class="col-md-5 task-title">Phone : </div>
+                    <div class="col-md-7">{{company.phone}}</div>
+                </li>
+                <li class="row one red">
+                    <div class="col-md-5 task-title">Sector : </div>
+                    <div class="col-md-7">{{company.sector}}</div>
+                </li>
+                <li class="row one red">
+                    <div class="col-md-5 task-title">Mail : </div>
+                    <div class="col-md-7">{{company.mail}}</div>
+                </li>
+                <li class="row one red">
+                    <div class="col-md-5 task-title">Creation : </div>
+                    <div class="col-md-7">{{company.creation}}</div>
+                </li>
+                <li class="row one red">
+                    <div class="col-md-5 task-title">Description : </div>
+                    <div class="col-md-7">{{company.description}}</div>
+                </li>
+        </ul>
+    </div>
 </div>

@@ -9,42 +9,18 @@ import { CompanyService } from '../../../../../../../@services/admin/company.ser
   styleUrls: ['style.scss']
 })
 export class AddCompanyDialog {
-  public title = 'Ajouter Company';
-  public selectedValue: string;
-  public url:any = '';
-  public currencies: any[] = [
-    { value: 'EURO', viewValue: 'EURO' },
-    { value: 'USD', viewValue: 'USD' },
-    { value: 'DT', viewValue: 'DT' }
-  ];
-  public company: Company = new Company(null, '', '', '', '', null, '', '', '', '');
+  public title = 'Company';
+  public company: Company = new Company(null, '', '', '', '', '', null, '', '');
   constructor(
     private companyService: CompanyService,
     public dialogRef: MatDialogRef<AddCompanyDialog>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
     if (data) {
       this.company = data;
+      console.log(data);
     }
   }
   ngOnInit() {
-  }
-  onSelectFile(event) {
-    let reader = new FileReader();
-    if(event.target.files && event.target.files.length > 0) {
-      let file = event.target.files[0];
-      reader.readAsDataURL(file);
-      reader.onload = () => {
-        let photo = JSON.parse(JSON.stringify(
-          {
-            filename: file.name,
-            filetype : file.type,
-            base64: (reader.result as string).split(',')[1]
-          }));
-          // this.url = photo;
-          // this.url = {'background-image':  'url(data:'+photo.type+';base64,'+photo.base64+')'};
-          // console.log(JSON.parse(JSON.stringify({filename: file.name, filetype : file.type, base64: (reader.result as string).split(',')[1]})));
-      };
-    }
   }
   onSubmit() {
     console.log(this.company);

@@ -6,11 +6,11 @@ import { ConfirmDialog } from '../dialog/dialog-confirm/dialog-confirm.component
 import { AddCompanyDialog } from '../dialog/dialog-add-company/dialog-add-company.component';
 
 @Component({
-  selector: 'user-card',
+  selector: 'company-card',
   templateUrl: './card.html',
   styleUrls: ['./style.scss']
 })
-export class UserCard implements OnInit {
+export class CompanyCard implements OnInit {
   @Input() company: Company;
   private  originalcompany: Company;
   @Output() reloadCosultant = new EventEmitter<string>();
@@ -22,7 +22,7 @@ export class UserCard implements OnInit {
   ngOnInit() {
     this.originalcompany = Object.assign({}, this.company);
   }
-  deleteconsultant(company) {
+  deletecompany(company) {
     const dialogdeleteclientRef = this.dialogdeletecompany.open(ConfirmDialog, {
       panelClass: '',
       minWidth: '20%',
@@ -35,26 +35,29 @@ export class UserCard implements OnInit {
           this.snackBar.open('Delete', 'success', {
             duration: 2000,
           });
-          this.reloadCosultant.next();
+          // this.reloadCosultant.next();
           // this.setPage({ offset: 0, pageSize: 10 });
         }
       }
     });
   }
+  Clickedtest(){
+    console.log('test');
+  }
   editconsultant(consultant) {
-    const dialogeditclientRef = this.dialogdeletecompany.open(AddCompanyDialog, {
+    const dialogeditcompanyRef = this.dialogdeletecompany.open(AddCompanyDialog, {
       panelClass: '',
       minWidth: '320px',
       width: '70%',
       data: consultant,
     });
-    dialogeditclientRef.afterClosed().subscribe(result => {
+    dialogeditcompanyRef.afterClosed().subscribe(result => {
       if (result) {
         if (result.data == 'update') {
           this.snackBar.open('Update', 'success', {
             duration: 2000,
           });
-          this.reloadCosultant.next();
+          // this.reloadCosultant.next();
         }
       } else {
         // return to the original consultant

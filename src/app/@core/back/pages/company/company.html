@@ -50,8 +50,8 @@
   <mat-progress-bar [hidden]="loading" mode="query" style="position:absolute"></mat-progress-bar>
   <div class="container-fluid container-fixed-lg">
     <div class="row mt-4">
-      <div class="col-md-4 mb-2 mt-2" *ngFor="let consultant of consultants">
-        <user-card [company]="company" (reloadCosultant)="getConsultants({ pageSize: this.pageSize, pageNumber: this.pageIndex })"></user-card>
+      <div class="col-md-4 mb-2 mt-2" *ngFor="let company of companies">
+        <company-card [company]="company" (reloadCosultant)="getConsultants({ pageSize: this.pageSize, pageNumber: this.pageIndex })"></company-card>
       </div>
     </div>
     <loadingComponent [loading]="false"></loadingComponent>
