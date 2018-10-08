@@ -382,6 +382,13 @@ input[type=checkbox]:checked + label{
 }
 
 .input-group{
+    .input-group-append {
+        margin-left: 0;
+        .input-group-text{
+            border: 0;
+            border-radius: 0;
+        }
+    }
     &.transparent{
         .input-group-addon{
             background-color: transparent;

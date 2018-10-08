@@ -148,7 +148,8 @@
       span.toggle-btn {
         background-color: #4c2c92;
         &:before {
-          content: "\e601";
+          // content: "\e601";
+          content: "\e660";
         }
       }
       &:after {
@@ -160,19 +161,19 @@
           background-color: #7e57d1;
         }
         &:nth-child(1) {
-          transform: translate(9px, -62px);
+          transform: translate(5px, -60px);
         }
       
         &:nth-child(2) {
-          transform: translate(-50px, -34px);
+          transform: translate(-45px, -35px)
         }
       
         &:nth-child(3) {
-          transform: translate(-56px, 25px);
+          transform: translate(-45px, 35px);
         }
       
         &:nth-child(4) {
-          transform: translate(5px, 61px);
+          transform: translate(5px, 60px);
         }
       }
     } 

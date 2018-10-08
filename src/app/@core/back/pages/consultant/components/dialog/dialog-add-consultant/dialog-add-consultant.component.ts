@@ -29,6 +29,7 @@ export class AddConsultantDialog {
     }
   }
   ngOnInit() {
+    this.photo = this.consultant.photo;
     if(this.consultant.photo!=''){
       this.local_photo = this.consultant.photo;
     }

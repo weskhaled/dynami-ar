@@ -7,6 +7,58 @@
             <h5 class="semi-bold">{{title}}</h5>
         </div>
         <div class="modal-body">
+            <form id="form-personal" role="form" autocomplete="off">
+                <div class="row clearfix">
+                    <div class="col-md-6">
+                        <div class="form-group form-group-default required has-error" aria-required="true">
+                            <label>First name</label>
+                            <input type="text" class="form-control error" name="firstName" required="" aria-required="true"
+                                aria-invalid="true">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group form-group-default">
+                            <label>Last name</label>
+                            <input type="text" class="form-control" name="lastName" required="" aria-required="true">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group form-group-default input-group">
+                            <div class="form-input-group">
+                                <label>Dynamix username</label>
+                                <input type="text" class="form-control" name="username" placeholder="yourname.dynamix.com"
+                                    required="" aria-required="true">
+                            </div>
+                            <div class="input-group-append ">
+                                <span class="input-group-text">.dynamix.com
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group form-group-default">
+                            <label>Password</label>
+                            <input type="password" class="form-control" name="password" placeholder="Minimum of 4 characters."
+                                required="" aria-required="true">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group form-group-default">
+                            <label>Email</label>
+                            <input type="email" class="form-control" name="email" placeholder="We’ll send your login details to this address"
+                                required="" aria-required="true">
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <button class="btn btn-primary" type="submit">Create a new account</button>
+            </form>
         </div>
     </div>
 </div>

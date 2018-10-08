@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class PageHeader implements OnInit {  
   public config: PerfectScrollbarConfigInterface = {};
-  islogedin:boolean=false;
+  public islogedin:boolean=false;
     sidebaropen:boolean = false;
     username : any = null;
     constructor(private renderer: Renderer2,private router: Router,private userService: UserService,private authenticationService: AuthenticationService) {

@@ -69,7 +69,12 @@ padding: 0!important;
     height: 100vh;
     overflow-y: visible;
 }
-
+.mat-paginator-range-label {
+    margin: 0 5px 0 5px!important;
+}
+.mat-paginator-page-size {
+    margin-right: 5px!important;
+}
 /*logo text*/
 .logo-text {
 color: black;
