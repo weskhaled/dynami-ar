@@ -10,7 +10,7 @@ const routes: Routes = [
     loadChildren: './@core/back/back.module#BackModule',
     canActivate: [AuthGuard]
   },
-  { path: '**', redirectTo: '' },
+  { path: '**', redirectTo: '/auth' },
 ];
 
 const config: ExtraOptions = {

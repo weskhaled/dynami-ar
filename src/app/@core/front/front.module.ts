@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // Import the library
 // import { IsotopeModule } from 'ngx-isotope';
-import {NgxChartsModule} from '@swimlane/ngx-charts';
+// import {NgxChartsModule} from '@swimlane/ngx-charts';
 // Import ng-circle-progress
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
@@ -26,7 +26,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   imports: [
     CommonModule,
     // IsotopeModule,
-    NgxChartsModule,
+    // NgxChartsModule,
     SwiperModule,
     // Specify ng-circle-progress as an import
     NgCircleProgressModule.forRoot({

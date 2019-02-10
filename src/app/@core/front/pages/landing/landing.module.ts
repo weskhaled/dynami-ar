@@ -6,7 +6,7 @@ import { LandingComponent } from './landing.component';
 import { MaterialModule } from '../../../../@core/material.module';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { IsotopeModule } from 'ngx-isotope';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
+// import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { SwiperSlider } from '../../components/swiper-slider/swiper-slider.component';
@@ -32,7 +32,7 @@ import { PageHeader } from '../../components/page-header/page-header.component';
     }),
     AgmCoreModule,
     ScrollToModule.forRoot(),
-    NgxChartsModule,
+    // NgxChartsModule,
     MaterialModule,
     FormsModule,
     CommonModule,

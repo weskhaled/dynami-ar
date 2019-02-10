@@ -1,5 +1,5 @@
 
-import { tap } from "rxjs/operators";
+import { tap ,  catchError } from "rxjs/operators";
 import { Injectable } from "@angular/core";
 import {
   HttpInterceptor,
@@ -15,7 +15,6 @@ import {
 } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { Observable } from "rxjs";
-import { catchError } from "rxjs/operators";
 
 const TOKEN_HEADER_KEY = "Authorization";
 

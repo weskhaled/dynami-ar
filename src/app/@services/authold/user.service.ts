@@ -1,11 +1,9 @@
 
-import {throwError as observableThrowError } from 'rxjs';
+import {throwError as observableThrowError ,  Observable, of } from 'rxjs';
 
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
-import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { User } from '../../models/index';
