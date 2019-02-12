@@ -133,7 +133,7 @@ export class SwiperSlider implements OnInit {
     keyboard: true,
     mousewheel: false,
     scrollbar: false,
-    parallax: true,
+    parallax: false,
     effect: "slide",
     pagination: {
       el: '.swiper-pagination',
